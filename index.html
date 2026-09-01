@@ -734,8 +734,7 @@
 </head>
 <body>
 
-    <!-- Top Navigation Header -->
-   <!-- Header / Navbar -->
+    <!-- Header / Navbar -->
     <header>
         <div class="logo-container" id="logo-btn">
             <img src="grasp.jpg" 
@@ -744,11 +743,11 @@
                  onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'220\' height=\'52\' viewBox=\'0 0 220 52\'><rect width=\'220\' height=\'52\' fill=\'%230b1120\' rx=\'6\'/><text x=\'15\' y=\'32\' font-family=\'sans-serif\' font-size=\'20\' font-weight=\'bold\' fill=\'%23eab308\'>CAREER</text><text x=\'110\' y=\'32\' font-family=\'sans-serif\' font-size=\'20\' font-weight=\'bold\' fill=\'%232563eb\'>GRASPP</text></svg>';">
         </div>
         <div class="header-actions">
-            <button type="button" class="glass-btn" id="courses-btn">
+            <!-- Directly links to courses.html -->
+            <a href="courses.html" class="glass-btn" id="courses-btn">
                 <i class="fa-solid fa-graduation-cap"></i> Courses
-            </button>
+            </a>
 
-            <!-- UPDATE THIS LOGIN LINK BELOW: -->
             <a href="login.html" class="glass-btn">
                 <i class="fa-solid fa-right-to-bracket"></i> Login
             </a>
@@ -1070,7 +1069,6 @@
             const detailSec = document.getElementById('course-detail-section');
             const paymentSec = document.getElementById('payment-section');
 
-            const coursesBtn = document.getElementById('courses-btn');
             const backHomeBtn = document.getElementById('back-home-btn');
             const backCoursesBtn = document.getElementById('back-courses-btn');
             const backDetailBtn = document.getElementById('back-detail-btn');
@@ -1138,7 +1136,6 @@
                 detailSec.style.display = 'none';
                 paymentSec.style.display = 'none';
                 coursesSec.style.display = 'block';
-                coursesBtn.classList.add('active');
                 window.scrollTo({ top: 0, behavior: 'smooth' });
             }
 
@@ -1147,11 +1144,9 @@
                 detailSec.style.display = 'none';
                 paymentSec.style.display = 'none';
                 homeSec.style.display = 'block';
-                coursesBtn.classList.remove('active');
                 window.scrollTo({ top: 0, behavior: 'smooth' });
             }
 
-            coursesBtn.addEventListener('click', showCoursesView);
             backHomeBtn.addEventListener('click', showHomeView);
             backCoursesBtn.addEventListener('click', showCoursesView);
             backDetailBtn.addEventListener('click', () => {
