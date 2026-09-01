@@ -118,6 +118,19 @@
             color: #ffffff;
         }
 
+        .user-profile-badge {
+            background: #f0fdf4;
+            border: 1px solid var(--accent-green);
+            color: var(--accent-green);
+            font-weight: 700;
+            padding: 0.65rem 1.2rem;
+            border-radius: 12px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.95rem;
+        }
+
         /* Main Area */
         main {
             margin-top: 75px;
@@ -702,6 +715,99 @@
             box-shadow: 0 10px 25px rgba(30, 58, 138, 0.35);
         }
 
+        /* REGISTRATION & OTP MODAL */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(15, 23, 42, 0.65);
+            backdrop-filter: blur(6px);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+            padding: 1rem;
+        }
+
+        .modal-card {
+            background: #ffffff;
+            border-radius: 16px;
+            max-width: 480px;
+            width: 100%;
+            padding: 2rem;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            position: relative;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1.2rem;
+            right: 1.2rem;
+            background: none;
+            border: none;
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            cursor: pointer;
+        }
+
+        .modal-title {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--text-main);
+            margin-bottom: 0.4rem;
+        }
+
+        .modal-subtitle {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+            color: var(--text-main);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 0.75rem 0.9rem;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            font-size: 0.95rem;
+            outline: none;
+        }
+
+        .form-control:focus {
+            border-color: var(--accent-blue);
+        }
+
+        .btn-submit-reg {
+            width: 100%;
+            padding: 0.85rem;
+            background: var(--accent-blue);
+            color: #ffffff;
+            border: none;
+            border-radius: 10px;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            margin-top: 0.5rem;
+            transition: background 0.2s;
+        }
+
+        .btn-submit-reg:hover {
+            background: #1e40af;
+        }
+
         /* PAYMENT PAGE STYLES */
         #payment-section { display: none; }
         .payment-container {
@@ -798,28 +904,6 @@
             border-radius: 10px;
             border: 1px dashed var(--border-color);
         }
-        .form-group { margin-bottom: 1rem; }
-        .form-group label {
-            display: block;
-            font-size: 0.88rem;
-            font-weight: 600;
-            color: var(--text-main);
-            margin-bottom: 0.4rem;
-        }
-        .form-control {
-            width: 100%;
-            padding: 0.75rem 1rem;
-            border-radius: 8px;
-            border: 1px solid var(--border-color);
-            font-size: 0.95rem;
-            outline: none;
-        }
-        .form-control:focus { border-color: var(--accent-blue); }
-        .form-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1rem;
-        }
 
         .order-summary-box {
             background: #f8fafc;
@@ -896,9 +980,11 @@
             <a href="login.html" class="glass-btn">
                 <i class="fa-solid fa-right-to-bracket"></i> Login
             </a>
-            <a href="login.html" class="glass-btn glass-btn-primary">
-                <i class="fa-solid fa-user-plus"></i> New Registration
-            </a>
+            <div id="registration-action-container">
+                <button type="button" class="glass-btn glass-btn-primary" onclick="triggerRegistrationFlow()">
+                    <i class="fa-solid fa-user-plus"></i> New Registration
+                </button>
+            </div>
         </div>
     </header>
 
@@ -1123,46 +1209,12 @@
                             </div>
                         </div>
 
-                        <div class="payment-form-box" id="form-card">
-                            <div class="form-group">
-                                <label>Cardholder Name</label>
-                                <input type="text" class="form-control" placeholder="Name on Card">
-                            </div>
-                            <div class="form-group">
-                                <label>Card Number</label>
-                                <input type="text" class="form-control" placeholder="1234 5678 9101 1121" maxlength="19">
-                            </div>
-                            <div class="form-row">
-                                <div class="form-group">
-                                    <label>Expiry Date</label>
-                                    <input type="text" class="form-control" placeholder="MM/YY">
-                                </div>
-                                <div class="form-group">
-                                    <label>CVV / CVC</label>
-                                    <input type="password" class="form-control" placeholder="123" maxlength="4">
-                                </div>
-                            </div>
-                        </div>
-
                         <div class="payment-card-option" onclick="selectPaymentMethod('netbanking')">
                             <div class="payment-option-left">
                                 <input type="radio" id="pay-nb" name="payment_method" value="netbanking">
                                 <label for="pay-nb" class="payment-option-title">Net Banking</label>
                             </div>
                             <i class="fa-solid fa-building-columns" style="font-size: 1.2rem; color: var(--text-muted);"></i>
-                        </div>
-
-                        <div class="payment-form-box" id="form-netbanking">
-                            <div class="form-group">
-                                <label>Select Bank</label>
-                                <select class="form-control">
-                                    <option>State Bank of India (SBI)</option>
-                                    <option>HDFC Bank</option>
-                                    <option>ICICI Bank</option>
-                                    <option>Axis Bank</option>
-                                    <option>Kotak Mahindra Bank</option>
-                                </select>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -1180,10 +1232,6 @@
                         <span>GST / Taxes (18%)</span>
                         <span id="checkout-tax"></span>
                     </div>
-                    <div class="summary-row" style="color: var(--accent-green);">
-                        <span>Platform Discount</span>
-                        <span>- ₹0</span>
-                    </div>
 
                     <div class="summary-total">
                         <span>Total Amount</span>
@@ -1198,10 +1246,82 @@
         </div>
     </main>
 
+    <!-- REGISTRATION & OTP POPUP MODAL -->
+    <div class="modal-overlay" id="registration-modal">
+        <div class="modal-card">
+            <button class="modal-close" onclick="closeRegistrationModal()"><i class="fa-solid fa-xmark"></i></button>
+
+            <!-- Step 1: Registration Details -->
+            <div id="reg-step-1">
+                <h2 class="modal-title">Student Registration</h2>
+                <p class="modal-subtitle">Please provide your details to unlock full access to our courses.</p>
+                
+                <form id="registration-form" onsubmit="handleRegistrationSubmit(event)">
+                    <div class="form-group">
+                        <label>1. Full Name</label>
+                        <input type="text" id="reg-fullname" class="form-control" placeholder="John Doe" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>2. Country</label>
+                        <select id="reg-country" class="form-control" required>
+                            <option value="India">India</option>
+                            <option value="United States">United States</option>
+                            <option value="United Kingdom">United Kingdom</option>
+                            <option value="United Arab Emirates">United Arab Emirates</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>3. Learner Type</label>
+                        <select id="reg-type" class="form-control" required>
+                            <option value="Learner">Individual Learner / Student</option>
+                            <option value="Organization">Organization / Corporate Member</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>4. Mobile Number</label>
+                        <input type="tel" id="reg-mobile" class="form-control" placeholder="+91 9876543210" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>5. Email Address</label>
+                        <input type="email" id="reg-email" class="form-control" placeholder="name@example.com" required>
+                    </div>
+
+                    <button type="submit" class="btn-submit-reg">Send Mobile OTP</button>
+                </form>
+            </div>
+
+            <!-- Step 2: OTP Verification -->
+            <div id="reg-step-2" style="display: none;">
+                <h2 class="modal-title">Verify Mobile OTP</h2>
+                <p class="modal-subtitle">We sent a 4-digit verification code to your mobile number. (Use Demo OTP: <strong>1234</strong>)</p>
+
+                <form onsubmit="handleOtpSubmit(event)">
+                    <div class="form-group">
+                        <label>Enter 4-Digit OTP</label>
+                        <input type="text" id="otp-input" class="form-control" placeholder="1234" maxlength="4" style="text-align: center; letter-spacing: 8px; font-weight: 700; font-size: 1.2rem;" required>
+                    </div>
+
+                    <button type="submit" class="btn-submit-reg">Verify & Access Courses</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
     <!-- JavaScript Data & Logic -->
     <script>
+        // INTEGRATED GOOGLE APPS SCRIPT WEB APP URL:
+        const GOOGLE_SHEET_WEB_APP_URL = "https://script.google.com/macros/s/AKfycby09o3IHOroQjS0s7yYspHQulBp4PD-UBs8mA8j0HRF1yIroW5p9-d8clJPlkW5rtlW/exec";
+
         const DEFAULT_DRIVE_LINK = "https://drive.google.com/file/d/1YTyxw_fOEJ0O_fBpG8_7Kcxr1ioaVEV2/view?usp=sharing";
         const DUMMY_PDF = "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf";
+
+        let currentUser = null;
+        let pendingCourseId = null;
 
         const COURSES_DATA = [
             {
@@ -1650,9 +1770,9 @@
             const backCoursesBtn = document.getElementById('back-courses-btn');
             const backDetailBtn = document.getElementById('back-detail-btn');
             const logoBtn = document.getElementById('logo-btn');
-            const container = document.getElementById('courses-container');
 
             function renderCourses() {
+                const container = document.getElementById('courses-container');
                 container.innerHTML = COURSES_DATA.map(course => `
                     <div class="course-card">
                         <div class="course-img-wrapper">
@@ -1667,98 +1787,13 @@
                                 </div>
                                 <p class="course-desc">${course.desc}</p>
                             </div>
-                            <button type="button" class="btn-get-details" onclick="openCourseDetail(${course.id})">
+                            <button type="button" class="btn-get-details" onclick="handleViewCourseClick(${course.id})">
                                 View Course <i class="fa-solid fa-chevron-right"></i>
                             </button>
                         </div>
                     </div>
                 `).join('');
             }
-
-            window.openCourseDetail = function(courseId) {
-                selectedCourse = COURSES_DATA.find(c => c.id === courseId);
-                if (!selectedCourse) return;
-
-                document.getElementById('detail-img').src = selectedCourse.image;
-                document.getElementById('detail-title').innerText = selectedCourse.title;
-                document.getElementById('detail-full-desc').innerText = selectedCourse.fullDesc;
-                document.getElementById('detail-price').innerText = `₹${selectedCourse.price}`;
-                document.getElementById('detail-modules').innerText = selectedCourse.modulesCount;
-                document.getElementById('detail-duration').innerText = selectedCourse.duration;
-                document.getElementById('pdf-view-btn').href = selectedCourse.pdfUrl;
-
-                // Render Modules Accordion
-                const accordionContainer = document.getElementById("modules-accordion-container");
-                accordionContainer.innerHTML = "";
-
-                selectedCourse.modules.forEach((mod, idx) => {
-                    const accBox = document.createElement("div");
-                    accBox.className = "accordion-module";
-                    accBox.innerHTML = `
-                        <div class="accordion-header" onclick="toggleAccordion('acc-body-${idx}')">
-                            <span><i class="fa-solid fa-layer-group" style="margin-right: 8px;"></i> ${mod.title}</span>
-                            <div>
-                                <span style="font-size: 0.85rem; color: var(--text-muted); font-weight: 600; margin-right: 10px;">${mod.hours}</span>
-                                <i class="fa-solid fa-chevron-down"></i>
-                            </div>
-                        </div>
-                        <div class="accordion-body" id="acc-body-${idx}">
-                            <ul class="module-topics-list">
-                                ${mod.topics.map(t => `<li><i class="fa-solid fa-circle-check"></i> ${t}</li>`).join('')}
-                            </ul>
-                            <div style="font-weight: 700; font-size: 0.9rem; margin-bottom: 0.5rem; color: var(--text-main);">Video Lessons & Session Materials:</div>
-                            ${mod.videos.map(v => `
-                                <div class="video-item-row">
-                                    <div class="video-info">
-                                        <i class="fa-solid fa-circle-play"></i>
-                                        <span>${v.name}</span>
-                                    </div>
-                                    <div style="display: flex; align-items: center; gap: 10px;">
-                                        <span class="video-duration">${v.duration}</span>
-                                        
-                                        ${v.pdfLink ? `
-                                            <a href="${v.pdfLink}" target="_blank" class="glass-btn" style="padding: 0.35rem 0.75rem; font-size: 0.82rem; text-decoration: none;">
-                                                <i class="fa-solid fa-file-pdf" style="color: var(--accent-gold);"></i> PDF Notes
-                                            </a>
-                                        ` : ''}
-
-                                        <button class="btn-play-video" onclick="playVideo('${v.id}', '${v.name}', '${v.driveLink}')">
-                                            <i class="fa-solid fa-play"></i> Watch
-                                        </button>
-                                    </div>
-                                </div>
-                            `).join('')}
-                        </div>
-                    `;
-                    accordionContainer.appendChild(accBox);
-                });
-
-                document.getElementById("detail-outcomes-list").innerHTML = selectedCourse.outcomes.map(out => `<li><i class="fa-solid fa-circle-check"></i> <span>${out}</span></li>`).join('');
-                document.getElementById("detail-audience-list").innerHTML = selectedCourse.audience.map(aud => `<li><i class="fa-solid fa-user-check"></i> <span>${aud}</span></li>`).join('');
-
-                homeSec.style.display = 'none';
-                coursesSec.style.display = 'none';
-                paymentSec.style.display = 'none';
-                detailSec.style.display = 'block';
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-            };
-
-            document.getElementById('buy-now-btn').onclick = function() {
-                if (!selectedCourse) return;
-
-                const basePrice = parseInt(selectedCourse.price);
-                const tax = Math.round(basePrice * 0.18);
-                const total = basePrice + tax;
-
-                document.getElementById('checkout-course-title').innerText = selectedCourse.title;
-                document.getElementById('checkout-subtotal').innerText = `₹${basePrice}`;
-                document.getElementById('checkout-tax').innerText = `₹${tax}`;
-                document.getElementById('checkout-total').innerText = `₹${total}`;
-
-                detailSec.style.display = 'none';
-                paymentSec.style.display = 'block';
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-            };
 
             function showCoursesView() {
                 homeSec.style.display = 'none';
@@ -1790,6 +1825,157 @@
             renderCourses();
         });
 
+        function handleViewCourseClick(courseId) {
+            if (!currentUser) {
+                pendingCourseId = courseId;
+                openRegistrationModal();
+            } else {
+                openCourseDetail(courseId);
+            }
+        }
+
+        function triggerRegistrationFlow() {
+            if (currentUser) {
+                alert(`Registered as ${currentUser.name} (${currentUser.mobile})`);
+            } else {
+                openRegistrationModal();
+            }
+        }
+
+        function openRegistrationModal() {
+            document.getElementById('reg-step-1').style.display = 'block';
+            document.getElementById('reg-step-2').style.display = 'none';
+            document.getElementById('registration-modal').style.display = 'flex';
+        }
+
+        function closeRegistrationModal() {
+            document.getElementById('registration-modal').style.display = 'none';
+        }
+
+        function handleRegistrationSubmit(event) {
+            event.preventDefault();
+            document.getElementById('reg-step-1').style.display = 'none';
+            document.getElementById('reg-step-2').style.display = 'block';
+        }
+
+        function handleOtpSubmit(event) {
+            event.preventDefault();
+            const otpVal = document.getElementById('otp-input').value;
+
+            if (otpVal === "1234" || otpVal.length === 4) {
+                const name = document.getElementById('reg-fullname').value;
+                const country = document.getElementById('reg-country').value;
+                const learnerType = document.getElementById('reg-type').value;
+                const mobile = document.getElementById('reg-mobile').value;
+                const email = document.getElementById('reg-email').value;
+                
+                currentUser = { name, country, learnerType, mobile, email };
+
+                // Save registered info to Google Sheet via Web App URL
+                saveToGoogleSheet(currentUser);
+
+                // Update Navigation Header
+                document.getElementById('registration-action-container').innerHTML = `
+                    <div class="user-profile-badge">
+                        <i class="fa-solid fa-circle-check"></i> ${name}
+                    </div>
+                `;
+
+                closeRegistrationModal();
+
+                if (pendingCourseId) {
+                    openCourseDetail(pendingCourseId);
+                    pendingCourseId = null;
+                }
+            } else {
+                alert("Invalid OTP! Please enter 1234.");
+            }
+        }
+
+        function saveToGoogleSheet(userData) {
+            fetch(GOOGLE_SHEET_WEB_APP_URL, {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    timestamp: new Date().toLocaleString(),
+                    fullName: userData.name,
+                    country: userData.country,
+                    learnerType: userData.learnerType,
+                    mobile: userData.mobile,
+                    email: userData.email
+                })
+            }).catch(err => console.error("Error sending to Google Sheets:", err));
+        }
+
+        function openCourseDetail(courseId) {
+            selectedCourse = COURSES_DATA.find(c => c.id === courseId);
+            if (!selectedCourse) return;
+
+            document.getElementById('detail-img').src = selectedCourse.image;
+            document.getElementById('detail-title').innerText = selectedCourse.title;
+            document.getElementById('detail-full-desc').innerText = selectedCourse.fullDesc;
+            document.getElementById('detail-price').innerText = `₹${selectedCourse.price}`;
+            document.getElementById('detail-modules').innerText = selectedCourse.modulesCount;
+            document.getElementById('detail-duration').innerText = selectedCourse.duration;
+            document.getElementById('pdf-view-btn').href = selectedCourse.pdfUrl;
+
+            // Render Modules Accordion
+            const accordionContainer = document.getElementById("modules-accordion-container");
+            accordionContainer.innerHTML = "";
+
+            selectedCourse.modules.forEach((mod, idx) => {
+                const accBox = document.createElement("div");
+                accBox.className = "accordion-module";
+                accBox.innerHTML = `
+                    <div class="accordion-header" onclick="toggleAccordion('acc-body-${idx}')">
+                        <span><i class="fa-solid fa-layer-group" style="margin-right: 8px;"></i> ${mod.title}</span>
+                        <div>
+                            <span style="font-size: 0.85rem; color: var(--text-muted); font-weight: 600; margin-right: 10px;">${mod.hours}</span>
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </div>
+                    </div>
+                    <div class="accordion-body" id="acc-body-${idx}">
+                        <ul class="module-topics-list">
+                            ${mod.topics.map(t => `<li><i class="fa-solid fa-circle-check"></i> ${t}</li>`).join('')}
+                        </ul>
+                        <div style="font-weight: 700; font-size: 0.9rem; margin-bottom: 0.5rem; color: var(--text-main);">Video Lessons & Session Materials:</div>
+                        ${mod.videos.map(v => `
+                            <div class="video-item-row">
+                                <div class="video-info">
+                                    <i class="fa-solid fa-circle-play"></i>
+                                    <span>${v.name}</span>
+                                </div>
+                                <div style="display: flex; align-items: center; gap: 10px;">
+                                    <span class="video-duration">${v.duration}</span>
+                                    
+                                    ${v.pdfLink ? `
+                                        <a href="${v.pdfLink}" target="_blank" class="glass-btn" style="padding: 0.35rem 0.75rem; font-size: 0.82rem; text-decoration: none;">
+                                            <i class="fa-solid fa-file-pdf" style="color: var(--accent-gold);"></i> PDF Notes
+                                        </a>
+                                    ` : ''}
+
+                                    <button class="btn-play-video" onclick="playVideo('${v.id}', '${v.name}', '${v.driveLink}')">
+                                        <i class="fa-solid fa-play"></i> Watch
+                                    </button>
+                                </div>
+                            </div>
+                        `).join('')}
+                    </div>
+                `;
+                accordionContainer.appendChild(accBox);
+            });
+
+            document.getElementById("detail-outcomes-list").innerHTML = selectedCourse.outcomes.map(out => `<li><i class="fa-solid fa-circle-check"></i> <span>${out}</span></li>`).join('');
+            document.getElementById("detail-audience-list").innerHTML = selectedCourse.audience.map(aud => `<li><i class="fa-solid fa-user-check"></i> <span>${aud}</span></li>`).join('');
+
+            document.getElementById('home-section').style.display = 'none';
+            document.getElementById('courses-section').style.display = 'none';
+            document.getElementById('payment-section').style.display = 'none';
+            document.getElementById('course-detail-section').style.display = 'block';
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
         function toggleAccordion(bodyId) {
             const body = document.getElementById(bodyId);
             body.style.display = (body.style.display === "block") ? "none" : "block";
@@ -1797,20 +1983,10 @@
 
         function playVideo(videoId, title, driveLink) {
             document.getElementById("current-video-title").innerHTML = `<i class="fa-solid fa-play-circle"></i> Playing: ${title}`;
-
             const videoModal = document.getElementById("video-player-modal");
             const iframePlayer = document.getElementById("drive-iframe-player");
 
-            let previewUrl = driveLink;
-            if (previewUrl.includes("/view")) {
-                previewUrl = previewUrl.replace(/\/view.*/, "/preview");
-            } else if (!previewUrl.includes("/preview")) {
-                const match = driveLink.match(/\/d\/([a-zA-Z0-9_-]+)/);
-                if (match && match[1]) {
-                    previewUrl = `https://drive.google.com/file/d/${match[1]}/preview`;
-                }
-            }
-
+            let previewUrl = driveLink.replace(/\/view.*/, "/preview");
             iframePlayer.src = previewUrl;
             videoModal.style.display = "block";
             videoModal.scrollIntoView({ behavior: 'smooth' });
