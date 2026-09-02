@@ -99,23 +99,11 @@
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
         }
 
-        .glass-btn.active {
-            background: #1e3a8a;
-            color: #ffffff;
-            border-color: #1e3a8a;
-        }
-
         .glass-btn-primary {
             background: linear-gradient(135deg, #1e3a8a 0%, #d97706 100%);
             border: 1px solid rgba(255, 255, 255, 0.3);
             color: #ffffff;
             box-shadow: 0 4px 15px rgba(30, 58, 138, 0.2);
-        }
-
-        .glass-btn-primary:hover {
-            background: linear-gradient(135deg, #1e40af 0%, #b45309 100%);
-            box-shadow: 0 8px 25px rgba(30, 58, 138, 0.3);
-            color: #ffffff;
         }
 
         .user-profile-badge {
@@ -131,7 +119,7 @@
             font-size: 0.95rem;
         }
 
-        /* Main Area */
+        /* Main Layout */
         main {
             margin-top: 75px;
             flex: 1;
@@ -156,166 +144,29 @@
             gap: 2.5rem;
         }
 
-        .creator-img-wrapper { flex-shrink: 0; }
         .creator-img {
             width: 220px;
             height: 220px;
             object-fit: cover;
             border-radius: 16px;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
             border: 2px solid var(--border-color);
             background-color: #f1f5f9;
         }
+
         .creator-info { flex: 1; }
         .creator-info h1 {
             font-size: 2.2rem;
             font-weight: 700;
             color: var(--text-main);
             margin-bottom: 1.2rem;
-            letter-spacing: -0.5px;
         }
+
         .creator-info p {
             font-size: 1.08rem;
             line-height: 1.7;
             color: var(--text-muted);
             margin-bottom: 1rem;
         }
-        .creator-info p:last-child { margin-bottom: 0; }
-        .creator-info strong { color: var(--text-main); font-weight: 600; }
-
-        /* Features Section */
-        .features-header {
-            font-size: 2rem;
-            font-weight: 700;
-            color: var(--text-main);
-            margin-bottom: 1.8rem;
-            letter-spacing: -0.5px;
-        }
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2rem;
-        }
-        .feature-card {
-            background: #ffffff;
-            border: 1px solid var(--border-color);
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
-            transition: all 0.3s ease;
-            display: flex;
-            flex-direction: column;
-        }
-        .feature-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
-            border-color: #cbd5e1;
-        }
-        .feature-card-img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            background-color: #f1f5f9;
-        }
-        .feature-card-body {
-            padding: 1.8rem;
-            display: flex;
-            flex-direction: column;
-            gap: 0.8rem;
-        }
-        .feature-title {
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: var(--text-main);
-            line-height: 1.35;
-        }
-        .feature-desc {
-            font-size: 0.98rem;
-            line-height: 1.6;
-            color: var(--text-muted);
-        }
-
-        /* Footer Section */
-        .brand-footer-section {
-            margin-top: 4rem;
-            padding: 3.5rem 2rem;
-            background: #f8fafc;
-            border: 1px solid var(--border-color);
-            border-radius: 20px;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
-        }
-        .animated-brand-img {
-            width: 320px;
-            max-width: 100%;
-            height: auto;
-            border-radius: 14px;
-            margin-bottom: 2rem;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
-            animation: floatGlow 3.8s ease-in-out infinite;
-            background-color: #0f172a;
-        }
-        @keyframes floatGlow {
-            0% { transform: translateY(0px) scale(1); box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12); }
-            50% { transform: translateY(-10px) scale(1.02); box-shadow: 0 20px 40px rgba(30, 58, 138, 0.22); }
-            100% { transform: translateY(0px) scale(1); box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12); }
-        }
-        .brand-title {
-            font-size: 2.5rem;
-            font-weight: 800;
-            color: var(--text-main);
-            margin-bottom: 0.4rem;
-            letter-spacing: -0.5px;
-        }
-        .title-underline {
-            width: 70px;
-            height: 4px;
-            background-color: var(--text-main);
-            border-radius: 2px;
-            margin-bottom: 1.8rem;
-        }
-        .brand-subtitle {
-            font-size: 1.15rem;
-            font-weight: 600;
-            color: var(--text-main);
-            max-width: 820px;
-            margin-bottom: 1.2rem;
-            line-height: 1.5;
-        }
-        .brand-description {
-            font-size: 1.02rem;
-            color: var(--text-muted);
-            max-width: 840px;
-            line-height: 1.7;
-            margin-bottom: 2.2rem;
-        }
-        .social-icons {
-            display: flex;
-            gap: 1.2rem;
-            align-items: center;
-            justify-content: center;
-        }
-        .social-icon {
-            width: 42px;
-            height: 42px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.2rem;
-            color: #ffffff;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-        .social-icon.youtube { background-color: #ff0000; }
-        .social-icon.instagram { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
-        .social-icon.twitter { background-color: #000000; }
-        .social-icon.linkedin { background-color: #0a66c2; }
-        .social-icon.facebook { background-color: #1877f2; }
-        .social-icon:hover { transform: translateY(-3px); box-shadow: 0 6px 15px rgba(0,0,0,0.15); }
 
         /* Courses Catalog Section */
         #courses-section { display: none; }
@@ -324,41 +175,37 @@
             justify-content: space-between;
             align-items: center;
             margin-bottom: 2rem;
-            flex-wrap: wrap;
-            gap: 1rem;
         }
-        .courses-title { font-size: 2.2rem; font-weight: 800; color: var(--text-main); }
+
+        .courses-title { font-size: 2.2rem; font-weight: 800; }
+
         .courses-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
             gap: 1.8rem;
         }
+
         .course-card {
             background: #ffffff;
             border: 1px solid var(--border-color);
             border-radius: 18px;
             overflow: hidden;
-            box-shadow: 0 6px 20px rgba(15, 23, 42, 0.04);
             display: flex;
             flex-direction: column;
-            transition: all 0.3s ease;
         }
-        .course-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 30px rgba(15, 23, 42, 0.09);
-            border-color: #cbd5e1;
-        }
+
         .course-img-wrapper {
             position: relative;
             width: 100%;
             height: 190px;
-            background-color: #0f172a;
         }
+
         .course-card-img-top {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
+
         .course-badge {
             position: absolute;
             top: 14px;
@@ -370,6 +217,7 @@
             padding: 0.3rem 0.7rem;
             border-radius: 20px;
         }
+
         .course-card-body {
             padding: 1.5rem;
             display: flex;
@@ -377,32 +225,10 @@
             flex: 1;
             justify-content: space-between;
         }
-        .course-title {
-            font-size: 1.25rem;
-            font-weight: 800;
-            color: var(--text-main);
-            margin-bottom: 0.6rem;
-        }
-        .course-desc {
-            font-size: 0.92rem;
-            color: var(--text-muted);
-            line-height: 1.5;
-            margin-bottom: 1.2rem;
-            flex: 1;
-        }
-        .course-duration-tag {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            font-size: 0.85rem;
-            font-weight: 700;
-            color: var(--accent-blue);
-            margin-bottom: 1rem;
-            background: #eff6ff;
-            padding: 0.35rem 0.75rem;
-            border-radius: 8px;
-            width: fit-content;
-        }
+
+        .course-title { font-size: 1.25rem; font-weight: 800; margin-bottom: 0.6rem; }
+        .course-desc { font-size: 0.92rem; color: var(--text-muted); margin-bottom: 1.2rem; }
+
         .btn-get-details {
             width: 100%;
             padding: 0.8rem;
@@ -411,340 +237,43 @@
             background: #ffffff;
             color: var(--accent-blue);
             font-weight: 700;
-            font-size: 0.95rem;
             cursor: pointer;
-            transition: all 0.25s ease;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-        }
-        .btn-get-details:hover {
-            background: var(--accent-blue);
-            color: #ffffff;
         }
 
-        /* Course Detail Section */
-        #course-detail-section { display: none; }
-        .detail-header-nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 2rem;
-            flex-wrap: wrap;
-            gap: 1rem;
-        }
-        .course-detail-container {
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 2.5rem;
-            align-items: start;
-        }
-        .course-detail-left {
-            background: #ffffff;
-            border: 1px solid var(--border-color);
-            border-radius: 16px;
-            padding: 2.5rem;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
-        }
-        .detail-banner-img {
-            width: 100%;
-            height: 320px;
-            object-fit: cover;
-            border-radius: 12px;
-            margin-bottom: 2rem;
-            box-shadow: 0 6px 18px rgba(0,0,0,0.06);
-        }
-        .detail-heading {
-            font-size: 2.2rem;
-            font-weight: 800;
-            color: var(--text-main);
-            margin-bottom: 0.6rem;
-            line-height: 1.3;
-        }
-        .detail-subheading {
-            font-size: 1.3rem;
-            font-weight: 800;
-            color: var(--text-main);
-            margin-top: 2rem;
-            margin-bottom: 1rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 2px solid #e2e8f0;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        .detail-subheading i { color: var(--accent-blue); }
-        .detail-text-block {
-            font-size: 1.02rem;
-            line-height: 1.8;
-            color: var(--text-muted);
-            margin-bottom: 1rem;
-        }
-
-        .btn-pdf-view {
-            padding: 0.65rem 1.2rem;
-            background: #fef3c7;
-            color: var(--accent-gold);
-            border: 1px solid #fde68a;
-            border-radius: 10px;
-            font-weight: 700;
-            font-size: 0.9rem;
-            cursor: pointer;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            text-decoration: none;
-            transition: all 0.2s ease;
-        }
-        .btn-pdf-view:hover {
-            background: #fde68a;
-            color: #b45309;
-        }
-
-        /* Embedded Video Player Modal */
-        #video-player-modal {
-            display: none;
-            background: #0f172a;
-            color: #ffffff;
-            border-radius: 16px;
-            padding: 1.5rem;
-            margin-bottom: 2.5rem;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-        }
-        .player-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 1rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 1px solid #334155;
-        }
-        .video-wrapper {
-            position: relative;
-            width: 100%;
-            background: #000;
-            border-radius: 12px;
-            overflow: hidden;
-            min-height: 480px;
-        }
-        iframe.drive-iframe {
-            width: 100%;
-            height: 480px;
-            border: none;
-            border-radius: 12px;
-            display: block;
-        }
-
-        /* Interactive Accordion Modules */
-        .accordion-module {
-            background: #f8fafc;
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            margin-bottom: 1rem;
-            overflow: hidden;
-        }
-        .accordion-header {
-            padding: 1.2rem 1.5rem;
-            background: #f1f5f9;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-weight: 700;
-            font-size: 1.05rem;
-            color: var(--accent-blue);
-            transition: background 0.2s;
-        }
-        .accordion-header:hover { background: #e2e8f0; }
-        .accordion-body {
-            display: none;
-            padding: 1rem 1.5rem;
-            background: #ffffff;
-            border-top: 1px solid var(--border-color);
-        }
-        .module-topics-list {
-            list-style: none;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 0.5rem 1rem;
-            margin-bottom: 1rem;
-            padding-bottom: 1rem;
-            border-bottom: 1px solid var(--border-color);
-        }
-        .module-topics-list li {
-            font-size: 0.88rem;
-            color: var(--text-main);
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-        .module-topics-list li i { color: var(--accent-gold); }
-
-        .video-item-row {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0.8rem 1rem;
-            border-bottom: 1px dashed var(--border-color);
-            transition: background 0.2s;
-            border-radius: 8px;
-        }
-        .video-item-row:last-child { border-bottom: none; }
-        .video-item-row:hover { background: #f8fafc; }
-        .video-info {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            font-weight: 600;
-            font-size: 0.93rem;
-        }
-        .video-info i {
-            color: var(--accent-blue);
-            font-size: 1.1rem;
-        }
-        .video-duration {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            font-weight: 700;
-            background: #f1f5f9;
-            padding: 0.3rem 0.6rem;
-            border-radius: 6px;
-        }
-        .btn-play-video {
-            padding: 0.45rem 0.9rem;
-            border-radius: 8px;
-            background: var(--accent-blue);
-            color: #ffffff;
-            border: none;
-            font-weight: 600;
-            font-size: 0.85rem;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-        .btn-play-video:hover { background: #1e40af; }
-
-        .detail-list {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 0.6rem;
-        }
-        .detail-list li {
-            font-size: 0.95rem;
-            color: var(--text-main);
-            display: flex;
-            align-items: flex-start;
-            gap: 10px;
-            line-height: 1.5;
-        }
-        .detail-list li i {
-            color: var(--accent-blue);
-            margin-top: 4px;
-        }
-
-        .course-detail-right {
-            position: sticky;
-            top: 95px;
-            background: #f8fafc;
-            border: 1px solid var(--border-color);
-            border-radius: 16px;
-            padding: 2rem;
-            box-shadow: 0 8px 30px rgba(0,0,0,0.06);
-            display: flex;
-            flex-direction: column;
-            gap: 1.2rem;
-        }
-        .widget-title {
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: var(--text-main);
-            padding-bottom: 0.8rem;
-            border-bottom: 1px solid var(--border-color);
-        }
-        .widget-price-tag {
-            font-size: 2.2rem;
-            font-weight: 800;
-            color: var(--accent-blue);
-        }
-        .widget-price-period {
-            font-size: 0.9rem;
-            color: var(--text-muted);
-            font-weight: 400;
-        }
-        .widget-info-list {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            margin: 0.5rem 0;
-        }
-        .widget-info-item {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            font-size: 1rem;
-            color: var(--text-main);
-        }
-        .widget-info-item i {
-            font-size: 1.2rem;
-            color: var(--accent-gold);
-            width: 24px;
-        }
-        .btn-buy-now {
-            width: 100%;
-            padding: 1rem;
-            border-radius: 12px;
-            border: none;
-            background: linear-gradient(135deg, #1e3a8a 0%, #d97706 100%);
-            color: #ffffff;
-            font-weight: 700;
-            font-size: 1.1rem;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            cursor: pointer;
-            box-shadow: 0 6px 20px rgba(30, 58, 138, 0.25);
-            transition: all 0.3s ease;
-        }
-        .btn-buy-now:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(30, 58, 138, 0.35);
-        }
-
-        /* REGISTRATION & OTP MODAL */
+        /* RESPONSIVE MODAL POPUP */
         .modal-overlay {
             display: none;
             position: fixed;
             top: 0;
             left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(15, 23, 42, 0.65);
+            width: 100vw;
+            height: 100vh;
+            background: rgba(15, 23, 42, 0.7);
             backdrop-filter: blur(6px);
             z-index: 2000;
             justify-content: center;
             align-items: center;
             padding: 1rem;
+            overflow-y: auto;
         }
 
         .modal-card {
             background: #ffffff;
             border-radius: 16px;
-            max-width: 480px;
             width: 100%;
-            padding: 2rem;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            max-width: 440px;
+            max-height: 90vh;
+            overflow-y: auto;
+            padding: 1.8rem;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
             position: relative;
+            margin: auto;
         }
 
         .modal-close {
             position: absolute;
-            top: 1.2rem;
-            right: 1.2rem;
+            top: 1rem;
+            right: 1rem;
             background: none;
             border: none;
             font-size: 1.2rem;
@@ -752,573 +281,132 @@
             cursor: pointer;
         }
 
-        .modal-title {
-            font-size: 1.5rem;
-            font-weight: 800;
-            color: var(--text-main);
-            margin-bottom: 0.4rem;
-        }
+        .modal-title { font-size: 1.4rem; font-weight: 800; margin-bottom: 0.3rem; }
+        .modal-subtitle { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.2rem; }
 
-        .modal-subtitle {
-            font-size: 0.9rem;
-            color: var(--text-muted);
-            margin-bottom: 1.5rem;
-        }
-
-        .form-group {
-            margin-bottom: 1rem;
-        }
-
+        .form-group { margin-bottom: 0.8rem; }
         .form-group label {
             display: block;
-            font-size: 0.85rem;
+            font-size: 0.82rem;
             font-weight: 600;
-            margin-bottom: 0.3rem;
-            color: var(--text-main);
+            margin-bottom: 0.25rem;
         }
 
         .form-control {
             width: 100%;
-            padding: 0.75rem 0.9rem;
+            padding: 0.65rem 0.85rem;
             border: 1px solid var(--border-color);
             border-radius: 8px;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             outline: none;
-        }
-
-        .form-control:focus {
-            border-color: var(--accent-blue);
         }
 
         .btn-submit-reg {
             width: 100%;
-            padding: 0.85rem;
+            padding: 0.8rem;
             background: var(--accent-blue);
             color: #ffffff;
             border: none;
             border-radius: 10px;
             font-weight: 700;
-            font-size: 1rem;
+            font-size: 0.95rem;
             cursor: pointer;
-            margin-top: 0.5rem;
-            transition: background 0.2s;
+            margin-top: 0.4rem;
         }
 
-        .btn-submit-reg:hover {
-            background: #1e40af;
-        }
-
-        /* PAYMENT PAGE STYLES */
-        #payment-section { display: none; }
-        .payment-container {
-            display: grid;
-            grid-template-columns: 1.8fr 1fr;
-            gap: 2.5rem;
-            align-items: start;
-        }
-        .payment-box {
-            background: #ffffff;
-            border: 1px solid var(--border-color);
-            border-radius: 16px;
-            padding: 2rem;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
-        }
-        .payment-section-title {
-            font-size: 1.4rem;
-            font-weight: 700;
-            color: var(--text-main);
-            margin-bottom: 1.5rem;
-            padding-bottom: 0.8rem;
-            border-bottom: 2px solid var(--border-color);
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        .payment-option-group {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            margin-bottom: 2rem;
-        }
-        .payment-card-option {
-            border: 2px solid var(--border-color);
-            border-radius: 12px;
-            padding: 1.2rem;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            background: #fafafa;
-        }
-        .payment-card-option:hover, .payment-card-option.selected {
-            border-color: var(--accent-blue);
-            background: #f0f7ff;
-        }
-        .payment-option-left {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-        .payment-option-left input[type="radio"] {
-            width: 18px;
-            height: 18px;
-            accent-color: var(--accent-blue);
-        }
-        .payment-option-title {
-            font-weight: 700;
-            font-size: 1.05rem;
-            color: var(--text-main);
-        }
-        .brand-logos-wrapper {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        .brand-logo-badge {
-            height: 28px;
-            padding: 2px 8px;
-            border-radius: 6px;
-            background: #ffffff;
-            border: 1px solid #cbd5e1;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 800;
-            font-size: 0.82rem;
-            letter-spacing: -0.3px;
-        }
-        .brand-logo-badge.gpay { color: #4285F4; border-color: #4285F4; }
-        .brand-logo-badge.phonepe { color: #5f259f; border-color: #5f259f; }
-        .brand-logo-badge.paytm { color: #00baf2; border-color: #00baf2; background: #002e6e; color: #fff; }
-        .brand-logo-badge.bhim { color: #00833a; border-color: #00833a; }
-        .brand-logo-badge.visa { color: #1a1f71; font-style: italic; font-weight: 900; }
-        .brand-logo-badge.mastercard { color: #eb001b; font-weight: 900; }
-        .brand-logo-badge.rupay { color: #f37021; font-weight: 800; }
-
-        .payment-form-box {
-            display: none;
-            margin-top: 1rem;
-            padding: 1.2rem;
-            background: #ffffff;
-            border-radius: 10px;
-            border: 1px dashed var(--border-color);
-        }
-
-        .order-summary-box {
-            background: #f8fafc;
-            border: 1px solid var(--border-color);
-            border-radius: 16px;
-            padding: 2rem;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
-        }
-        .summary-row {
-            display: flex;
-            justify-content: space-between;
-            font-size: 0.98rem;
-            color: var(--text-muted);
-            margin-bottom: 0.8rem;
-        }
-        .summary-total {
-            display: flex;
-            justify-content: space-between;
-            font-size: 1.3rem;
-            font-weight: 800;
-            color: var(--text-main);
-            padding-top: 1rem;
-            margin-top: 1rem;
-            border-top: 2px solid var(--border-color);
-        }
-        .btn-pay-now {
-            width: 100%;
-            padding: 1rem;
-            border-radius: 12px;
-            border: none;
-            background: var(--accent-green);
-            color: #ffffff;
-            font-weight: 700;
-            font-size: 1.1rem;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            cursor: pointer;
-            margin-top: 1.5rem;
-            box-shadow: 0 6px 20px rgba(22, 163, 74, 0.25);
-            transition: all 0.3s ease;
-        }
-        .btn-pay-now:hover {
-            background: #15803d;
-            transform: translateY(-2px);
-        }
-
-        @media (max-width: 900px) {
-            .payment-container { grid-template-columns: 1fr; }
-            .course-detail-container { grid-template-columns: 1fr; }
-        }
-        @media (max-width: 768px) {
-            .creator-section { flex-direction: column; text-align: center; }
-            .creator-img { width: 180px; height: 180px; }
-            header { padding: 0 1rem; }
-        }
+        #course-detail-section { display: none; }
     </style>
 </head>
 <body>
 
-    <!-- Top Navigation Header -->
+    <!-- Header Navigation -->
     <header>
         <div class="logo-container" id="logo-btn">
-            <img src="grasp.jpg" 
-                 alt="CAREER GRASPP Logo" 
-                 class="logo-img"
-                 onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'220\' height=\'52\' viewBox=\'0 0 220 52\'><rect width=\'220\' height=\'52\' fill=\'%230b1120\' rx=\'6\'/><text x=\'15\' y=\'32\' font-family=\'sans-serif\' font-size=\'20\' font-weight=\'bold\' fill=\'%23eab308\'>CAREER</text><text x=\'110\' y=\'32\' font-family=\'sans-serif\' font-size=\'20\' font-weight=\'bold\' fill=\'%232563eb\'>GRASPP</text></svg>';">
+            <img src="grasp.jpg" alt="CAREER GRASPP" class="logo-img" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'220\' height=\'52\' viewBox=\'0 0 220 52\'><rect width=\'220\' height=\'52\' fill=\'%230b1120\' rx=\'6\'/><text x=\'15\' y=\'32\' font-family=\'sans-serif\' font-size=\'20\' font-weight=\'bold\' fill=\'%23eab308\'>CAREER</text><text x=\'110\' y=\'32\' font-family=\'sans-serif\' font-size=\'20\' font-weight=\'bold\' fill=\'%232563eb\'>GRASPP</text></svg>';">
         </div>
         <div class="header-actions">
-            <button type="button" class="glass-btn" id="courses-btn">
-                <i class="fa-solid fa-graduation-cap"></i> Courses
-            </button>
-            <a href="login.html" class="glass-btn">
-                <i class="fa-solid fa-right-to-bracket"></i> Login
-            </a>
+            <button type="button" class="glass-btn" id="courses-btn"><i class="fa-solid fa-graduation-cap"></i> Courses</button>
             <div id="registration-action-container">
-                <button type="button" class="glass-btn glass-btn-primary" onclick="triggerRegistrationFlow()">
-                    <i class="fa-solid fa-user-plus"></i> New Registration
-                </button>
+                <button type="button" class="glass-btn glass-btn-primary" onclick="triggerRegistrationFlow()"><i class="fa-solid fa-user-plus"></i> New Registration</button>
             </div>
         </div>
     </header>
 
-    <!-- Main Container Layout -->
+    <!-- Main Layout -->
     <main>
-        <!-- PAGE 1: LANDING PAGE -->
         <div id="home-section">
             <section class="creator-section">
-                <div class="creator-img-wrapper">
-                    <img src="Arya.jpeg" 
-                         alt="Aarya Aakash" 
-                         class="creator-img"
-                         onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=500&q=80';">
-                </div>
+                <img src="Arya.jpeg" alt="Aarya Aakash" class="creator-img" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=500&q=80';">
                 <div class="creator-info">
                     <h1>About the creator</h1>
-                    <p><strong>Aarya Aakash</strong> is an Academic Systems Designer, Career Orientation Facilitator, and English Communication Trainer with over 25 years of experience working with school students, college learners, job seekers, working professionals, and organizations.</p>
-                    <p>His work focuses on designing structured learning systems that improve study habits, academic accuracy, communication clarity, productivity, and career readiness.</p>
-                </div>
-            </section>
-
-            <section>
-                <h2 class="features-header">Features</h2>
-                <div class="features-grid">
-                    <div class="feature-card">
-                        <img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=800&q=80" alt="Mind Programming" class="feature-card-img">
-                        <div class="feature-card-body">
-                            <h3 class="feature-title">Mind Programming for Performance</h3>
-                            <p class="feature-desc">Build confidence, focus, and discipline with affirmations, visualization, journaling, and goal manifestation.</p>
-                        </div>
-                    </div>
-
-                    <div class="feature-card">
-                        <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=800&q=80" alt="One-Day Workshops" class="feature-card-img">
-                        <div class="feature-card-body">
-                            <h3 class="feature-title">One-Day Workshops for Schools & Colleges</h3>
-                            <p class="feature-desc">Study skills, exam strategy, communication, and placement readiness for students from 7th to engineering.</p>
-                        </div>
-                    </div>
-
-                    <div class="feature-card">
-                        <img src="https://images.unsplash.com/photo-1515187029135-18ee286d815b?auto=format&fit=crop&w=800&q=80" alt="Online English Com & Presentation Skills" class="feature-card-img">
-                        <div class="feature-card-body">
-                            <h3 class="feature-title">Online English Com & Presentation Skills</h3>
-                            <p class="feature-desc">Speak fluently, present confidently, and communicate clearly at work and interviews.</p>
-                        </div>
-                    </div>
-
-                    <div class="feature-card">
-                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80" alt="Corporate Training Solutions" class="feature-card-img">
-                        <div class="feature-card-body">
-                            <h3 class="feature-title">Corporate Training Solutions</h3>
-                            <p class="feature-desc">Tailor-made programs in soft skills, business English, leadership, and productivity.</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section class="brand-footer-section">
-                <img src="grasp_2.jpg" 
-                     alt="Career Graspp Animated Logo" 
-                     class="animated-brand-img"
-                     onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'320\' height=\'160\' viewBox=\'0 0 320 160\'><rect width=\'320\' height=\'160\' fill=\'%230b1120\' rx=\'14\'/><text x=\'30\' y=\'75\' font-family=\'sans-serif\' font-size=\'26\' font-weight=\'bold\' fill=\'%23eab308\'>CAREER</text><text x=\'150\' y=\'75\' font-family=\'sans-serif\' font-size=\'26\' font-weight=\'bold\' fill=\'%232563eb\'>GRASPP</text><text x=\'30\' y=\'115\' font-family=\'sans-serif\' font-size=\'14\' font-weight=\'500\' fill=\'%2394a3b8\'>LEARN | LEAD | LEVEL UP</text></svg>';">
-
-                <h2 class="brand-title">Career Graspp</h2>
-                <div class="title-underline"></div>
-                <p class="brand-subtitle">Career Growth, Mind Performance, English Communication, & Test Preparation Systems for Students, Professionals and Organizations</p>
-                <p class="brand-description">Career Graspp delivers online and offline coaching for aspirants in schools, colleges, and corporates. We specialize in employability, communication mastery, mind programming, and corporate soft skills.</p>
-                <div class="social-icons">
-                    <a href="#" class="social-icon youtube" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
-                    <a href="#" class="social-icon instagram" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="#" class="social-icon twitter" title="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
-                    <a href="#" class="social-icon linkedin" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-                    <a href="#" class="social-icon facebook" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <p><strong>Aarya Aakash</strong> is an Academic Systems Designer and Communication Trainer with over 25 years of experience equipping students and professionals with career readiness systems.</p>
                 </div>
             </section>
         </div>
 
-        <!-- PAGE 2: COURSES CATALOG SECTION -->
         <div id="courses-section">
             <div class="courses-header-wrapper">
                 <h1 class="courses-title">Available Programs & Courses</h1>
-                <button type="button" class="glass-btn" id="back-home-btn">
-                    <i class="fa-solid fa-arrow-left"></i> Back to Home
-                </button>
             </div>
-
-            <div class="courses-grid" id="courses-container">
-                <!-- Courses injected via JS -->
-            </div>
+            <div class="courses-grid" id="courses-container"></div>
         </div>
 
-        <!-- PAGE 3: DYNAMIC COURSE DETAIL PAGE -->
         <div id="course-detail-section">
-            <div class="detail-header-nav">
-                <button type="button" class="glass-btn" id="back-courses-btn">
-                    <i class="fa-solid fa-arrow-left"></i> Back to Courses
-                </button>
-                <a href="#" id="pdf-view-btn" target="_blank" class="btn-pdf-view">
-                    <i class="fa-solid fa-file-pdf"></i> View / Download Full Course Syllabus PDF
-                </a>
-            </div>
-
-            <div class="course-detail-container">
-                <div class="course-detail-left">
-                    <img src="" id="detail-img" alt="Course Banner" class="detail-banner-img">
-                    <h1 class="detail-heading" id="detail-title"></h1>
-
-                    <!-- EMBEDDED GOOGLE DRIVE VIDEO PLAYER BOX -->
-                    <div id="video-player-modal">
-                        <div class="player-header">
-                            <h3 id="current-video-title"><i class="fa-solid fa-play-circle"></i> Now Playing: Video Lesson</h3>
-                            <button class="glass-btn" onclick="closeVideoPlayer()"><i class="fa-solid fa-xmark"></i> Close Player</button>
-                        </div>
-                        <div class="video-wrapper">
-                            <iframe id="drive-iframe-player" class="drive-iframe" src="" allow="autoplay; fullscreen" allowfullscreen></iframe>
-                        </div>
-                    </div>
-
-                    <!-- Course Overview & Scope -->
-                    <div style="margin-bottom: 2rem;">
-                        <h3 class="detail-subheading"><i class="fa-solid fa-align-left"></i> Course Overview & Curriculum Scope</h3>
-                        <p id="detail-full-desc" class="detail-text-block"></p>
-                    </div>
-
-                    <!-- Interactive Accordion Modules with Clean Video & PDF Row -->
-                    <div style="margin-bottom: 2rem;">
-                        <h3 class="detail-subheading"><i class="fa-solid fa-layer-group"></i> Comprehensive Module Breakdown & Video Lessons</h3>
-                        <p style="color: var(--text-muted); font-size: 0.92rem; margin-bottom: 1.2rem;">
-                            Click on any module to expand, view syllabus topics, access session PDFs, and stream video lessons.
-                        </p>
-                        <div id="modules-accordion-container"></div>
-                    </div>
-
-                    <!-- Key Learning Outcomes -->
-                    <div style="margin-bottom: 2rem;">
-                        <h3 class="detail-subheading"><i class="fa-solid fa-bullseye"></i> Key Learning Outcomes</h3>
-                        <ul class="detail-list" id="detail-outcomes-list"></ul>
-                    </div>
-
-                    <!-- Target Audience & Prerequisites -->
-                    <div>
-                        <h3 class="detail-subheading"><i class="fa-solid fa-users"></i> Target Audience & Prerequisites</h3>
-                        <ul class="detail-list" id="detail-audience-list"></ul>
-                    </div>
-                </div>
-
-                <!-- Right Side Summary Box -->
-                <div class="course-detail-right">
-                    <h3 class="widget-title">Course Enrollment</h3>
-                    <div>
-                        <div class="widget-price-tag" id="detail-price"></div>
-                        <span class="widget-price-period">Full Lifetime Access & Certificate Included</span>
-                    </div>
-
-                    <ul class="widget-info-list">
-                        <li class="widget-info-item">
-                            <i class="fa-solid fa-layer-group"></i>
-                            <span>Modules: <strong id="detail-modules"></strong></span>
-                        </li>
-                        <li class="widget-info-item">
-                            <i class="fa-solid fa-clock"></i>
-                            <span>Total Duration: <strong id="detail-duration"></strong></span>
-                        </li>
-                        <li class="widget-info-item">
-                            <i class="fa-solid fa-certificate"></i>
-                            <span>Credential: <strong>Verified Certificate</strong></span>
-                        </li>
-                    </ul>
-
-                    <button type="button" class="btn-buy-now" id="buy-now-btn">
-                        <i class="fa-solid fa-cart-shopping"></i> Buy Now
-                    </button>
-                </div>
-            </div>
-        </div>
-
-        <!-- PAGE 4: CHECKOUT & PAYMENT PAGE -->
-        <div id="payment-section">
-            <div class="detail-header-nav">
-                <button type="button" class="glass-btn" id="back-detail-btn">
-                    <i class="fa-solid fa-arrow-left"></i> Back to Course Details
-                </button>
-            </div>
-
-            <div class="payment-container">
-                <div class="payment-box">
-                    <h2 class="payment-section-title">
-                        <i class="fa-solid fa-shield-halved" style="color: var(--accent-green);"></i> Select Payment Method
-                    </h2>
-
-                    <div class="payment-option-group">
-                        <div class="payment-card-option selected" onclick="selectPaymentMethod('upi')">
-                            <div class="payment-option-left">
-                                <input type="radio" id="pay-upi" name="payment_method" value="upi" checked>
-                                <label for="pay-upi" class="payment-option-title">UPI Instant Checkout</label>
-                            </div>
-                            <div class="brand-logos-wrapper">
-                                <span class="brand-logo-badge gpay">GPay</span>
-                                <span class="brand-logo-badge phonepe">PhonePe</span>
-                                <span class="brand-logo-badge paytm">Paytm</span>
-                                <span class="brand-logo-badge bhim">BHIM</span>
-                            </div>
-                        </div>
-
-                        <div class="payment-form-box" id="form-upi" style="display: block;">
-                            <div class="form-group">
-                                <label>Enter Virtual Payment Address (VPA / UPI ID)</label>
-                                <input type="text" class="form-control" placeholder="username@okhdfcbank / mobile@ybl">
-                            </div>
-                        </div>
-
-                        <div class="payment-card-option" onclick="selectPaymentMethod('card')">
-                            <div class="payment-option-left">
-                                <input type="radio" id="pay-card" name="payment_method" value="card">
-                                <label for="pay-card" class="payment-option-title">Credit / Debit Cards</label>
-                            </div>
-                            <div class="brand-logos-wrapper">
-                                <span class="brand-logo-badge visa">VISA</span>
-                                <span class="brand-logo-badge mastercard">MC</span>
-                                <span class="brand-logo-badge rupay">RuPay</span>
-                            </div>
-                        </div>
-
-                        <div class="payment-card-option" onclick="selectPaymentMethod('netbanking')">
-                            <div class="payment-option-left">
-                                <input type="radio" id="pay-nb" name="payment_method" value="netbanking">
-                                <label for="pay-nb" class="payment-option-title">Net Banking</label>
-                            </div>
-                            <i class="fa-solid fa-building-columns" style="font-size: 1.2rem; color: var(--text-muted);"></i>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="order-summary-box">
-                    <h3 class="widget-title" style="margin-bottom: 1.2rem;">Order Summary</h3>
-                    
-                    <p style="font-weight: 700; color: var(--text-main); margin-bottom: 1rem;" id="checkout-course-title"></p>
-
-                    <div class="summary-row">
-                        <span>Course Price</span>
-                        <span id="checkout-subtotal"></span>
-                    </div>
-                    <div class="summary-row">
-                        <span>GST / Taxes (18%)</span>
-                        <span id="checkout-tax"></span>
-                    </div>
-
-                    <div class="summary-total">
-                        <span>Total Amount</span>
-                        <span id="checkout-total" style="color: var(--accent-blue);"></span>
-                    </div>
-
-                    <button type="button" class="btn-pay-now" onclick="completePayment()">
-                        <i class="fa-solid fa-lock"></i> Complete Payment
-                    </button>
-                </div>
-            </div>
+            <button class="glass-btn" onclick="showCoursesView()"><i class="fa-solid fa-arrow-left"></i> Back to Courses</button>
+            <h1 id="detail-title" style="margin-top: 1rem;"></h1>
+            <p id="detail-full-desc" style="margin-top: 1rem; line-height: 1.7; color: var(--text-muted);"></p>
         </div>
     </main>
 
-    <!-- REGISTRATION & OTP POPUP MODAL -->
+    <!-- REGISTRATION POPUP MODAL (NO OTP) -->
     <div class="modal-overlay" id="registration-modal">
         <div class="modal-card">
             <button class="modal-close" onclick="closeRegistrationModal()"><i class="fa-solid fa-xmark"></i></button>
 
-            <!-- Step 1: Registration Details -->
-            <div id="reg-step-1">
-                <h2 class="modal-title">Student Registration</h2>
-                <p class="modal-subtitle">Please provide your details to unlock full access to our courses.</p>
-                
-                <form id="registration-form" onsubmit="handleRegistrationSubmit(event)">
-                    <div class="form-group">
-                        <label>1. Full Name</label>
-                        <input type="text" id="reg-fullname" class="form-control" placeholder="John Doe" required>
-                    </div>
+            <h2 class="modal-title">Student Registration</h2>
+            <p class="modal-subtitle">Fill in your details to get full access to courses.</p>
+            
+            <form id="registration-form" onsubmit="handleRegistrationSubmit(event)">
+                <div class="form-group">
+                    <label>1. Full Name</label>
+                    <input type="text" id="reg-fullname" class="form-control" placeholder="John Doe" required>
+                </div>
 
-                    <div class="form-group">
-                        <label>2. Country</label>
-                        <select id="reg-country" class="form-control" required>
-                            <option value="India">India</option>
-                            <option value="United States">United States</option>
-                            <option value="United Kingdom">United Kingdom</option>
-                            <option value="United Arab Emirates">United Arab Emirates</option>
-                            <option value="Other">Other</option>
-                        </select>
-                    </div>
+                <div class="form-group">
+                    <label>2. Country</label>
+                    <select id="reg-country" class="form-control" required>
+                        <option value="India">India</option>
+                        <option value="United States">United States</option>
+                        <option value="United Arab Emirates">United Arab Emirates</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
 
-                    <div class="form-group">
-                        <label>3. Learner Type</label>
-                        <select id="reg-type" class="form-control" required>
-                            <option value="Learner">Individual Learner / Student</option>
-                            <option value="Organization">Organization / Corporate Member</option>
-                        </select>
-                    </div>
+                <div class="form-group">
+                    <label>3. Learner Type</label>
+                    <select id="reg-type" class="form-control" required>
+                        <option value="Learner">Individual Learner / Student</option>
+                        <option value="Organization">Organization / Corporate</option>
+                    </select>
+                </div>
 
-                    <div class="form-group">
-                        <label>4. Mobile Number</label>
-                        <input type="tel" id="reg-mobile" class="form-control" placeholder="+91 9876543210" required>
-                    </div>
+                <div class="form-group">
+                    <label>4. Mobile Number</label>
+                    <input type="tel" id="reg-mobile" class="form-control" placeholder="9876543210" required>
+                </div>
 
-                    <div class="form-group">
-                        <label>5. Email Address</label>
-                        <input type="email" id="reg-email" class="form-control" placeholder="name@example.com" required>
-                    </div>
+                <div class="form-group">
+                    <label>5. Email Address</label>
+                    <input type="email" id="reg-email" class="form-control" placeholder="name@example.com" required>
+                </div>
 
-                    <button type="submit" class="btn-submit-reg">Send Mobile OTP</button>
-                </form>
-            </div>
-
-            <!-- Step 2: OTP Verification -->
-            <div id="reg-step-2" style="display: none;">
-                <h2 class="modal-title">Verify Mobile OTP</h2>
-                <p class="modal-subtitle">We sent a 4-digit verification code to your mobile number. (Use Demo OTP: <strong>1234</strong>)</p>
-
-                <form onsubmit="handleOtpSubmit(event)">
-                    <div class="form-group">
-                        <label>Enter 4-Digit OTP</label>
-                        <input type="text" id="otp-input" class="form-control" placeholder="1234" maxlength="4" style="text-align: center; letter-spacing: 8px; font-weight: 700; font-size: 1.2rem;" required>
-                    </div>
-
-                    <button type="submit" class="btn-submit-reg">Verify & Access Courses</button>
-                </form>
-            </div>
+                <button type="submit" class="btn-submit-reg" id="btn-register">Register & Access Courses</button>
+            </form>
         </div>
     </div>
 
-    <!-- JavaScript Data & Logic -->
     <script>
-        // INTEGRATED GOOGLE APPS SCRIPT WEB APP URL:
-        const GOOGLE_SHEET_WEB_APP_URL = "https://script.google.com/macros/s/AKfycby09o3IHOroQjS0s7yYspHQulBp4PD-UBs8mA8j0HRF1yIroW5p9-d8clJPlkW5rtlW/exec";
-
-        const DEFAULT_DRIVE_LINK = "https://drive.google.com/file/d/1YTyxw_fOEJ0O_fBpG8_7Kcxr1ioaVEV2/view?usp=sharing";
-        const DUMMY_PDF = "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf";
+        const GOOGLE_SHEET_WEB_APP_URL = "https://script.google.com/macros/s/AKfycbyLQK7oKK2ZMkM4Dd8J3fv-cQkiQK2sgRhKsCGmfXEzLYAoLixYnfYDyiLDBI0mFP-Z/exec";
 
         let currentUser = null;
         let pendingCourseId = null;
@@ -1328,502 +416,51 @@
                 id: 1,
                 title: "Communication Skills & Public Speaking Mastery",
                 badge: "Core Soft Skills",
-                duration: "36 Hours (6 Weeks)",
-                modulesCount: "10 Modules",
-                price: "3499",
                 image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=80",
-                desc: "Master verbal, non-verbal, and written communication tactics for professional success in corporate environments.",
-                pdfUrl: DUMMY_PDF,
-                fullDesc: "Communication Skills is an intensive 36-hour program specifically crafted for students and working professionals aiming to achieve articulation clarity and corporate readiness. The course bridges interpersonal communication gaps by training participants in vocal modulation, structured business correspondence, active listening, and cross-cultural workplace interactions.",
-                outcomes: [
-                    "Articulate complex ideas confidently during corporate meetings and client interactions.",
-                    "Eliminate common grammatical errors and informal slang in business emails.",
-                    "Demonstrate assertive communication while maintaining professional respect.",
-                    "Interpret body language cues effectively during one-on-one and group discussions."
-                ],
-                audience: [
-                    "Undergraduate and Postgraduate students preparing for placement drives.",
-                    "Early-career professionals looking to improve workplace interaction.",
-                    "No prior technical knowledge required."
-                ],
-                modules: [
-                    {
-                        title: "Module 1: Fundamentals of Professional Communication",
-                        hours: "8 Hours",
-                        topics: ["Verbal & Non-Verbal Dynamics", "Kinesics & Body Language Control", "Overcoming Communication Barriers", "Vocal Pitch & Modulation"],
-                        videos: [
-                            { id: "c1_m1_v1", name: "Lesson 1: Verbal & Non-Verbal Dynamics", duration: "14:20", driveLink: DEFAULT_DRIVE_LINK, pdfLink: DUMMY_PDF },
-                            { id: "c1_m1_v2", name: "Lesson 2: Kinesics & Body Language Control", duration: "18:45", driveLink: DEFAULT_DRIVE_LINK, pdfLink: DUMMY_PDF }
-                        ]
-                    },
-                    {
-                        title: "Module 2: Corporate Email & Written Correspondence",
-                        hours: "10 Hours",
-                        topics: ["Email Formatting & Professional Tone", "Drafting Executive Summaries", "Netiquette & Digital Protocols"],
-                        videos: [
-                            { id: "c1_m2_v1", name: "Lesson 1: Email Formatting Protocols", duration: "15:30", driveLink: DEFAULT_DRIVE_LINK, pdfLink: DUMMY_PDF }
-                        ]
-                    }
-                ]
+                desc: "Master verbal and non-verbal communication tactics for professional success.",
+                fullDesc: "An intensive program crafted for students and professionals aiming to achieve articulation clarity and corporate readiness."
             },
             {
                 id: 2,
                 title: "Mind Programming & Goal Manifestation",
                 badge: "Mind Performance",
-                duration: "15 Hours (3 Weeks)",
-                modulesCount: "10 Modules",
-                price: "2999",
                 image: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=600&q=80",
-                desc: "Subconscious alignment, visualization routines, and mental conditioning for peak performance.",
-                pdfUrl: DUMMY_PDF,
-                fullDesc: "Unlock the power of your subconscious mind through structured visualization and affirmation routines. This course provides tools to reprogram negative thought patterns, build laser-sharp mental focus, reduce anxiety, and set achievable long-term career goals.",
-                outcomes: [
-                    "Develop daily routines for positive cognitive reinforcement.",
-                    "Overcome imposter syndrome and self-limiting beliefs.",
-                    "Establish effective habit loops using behavioral science frameworks."
-                ],
-                audience: [
-                    "Students facing exam stress and academic burnout.",
-                    "Professionals seeking emotional resilience and career clarity."
-                ],
-                modules: [
-                    {
-                        title: "Module 1: Principles of Subconscious Alignment",
-                        hours: "5 Hours",
-                        topics: ["Cognitive Rewiring Frameworks", "Daily Affirmation Routines", "Goal Visualization"],
-                        videos: [
-                            { id: "c2_m1_v1", name: "Lesson 1: Understanding Subconscious Conditioning", duration: "16:20", driveLink: DEFAULT_DRIVE_LINK, pdfLink: DUMMY_PDF }
-                        ]
-                    }
-                ]
-            },
-            {
-                id: 3,
-                title: "Interview Skills & Mock Sessions",
-                badge: "Placement Ready",
-                duration: "40 Hours (5 Weeks)",
-                modulesCount: "10 Modules",
-                price: "4999",
-                image: "https://images.unsplash.com/photo-1565688534245-05d6b5be184a?auto=format&fit=crop&w=600&q=80",
-                desc: "Ace technical and HR interview rounds with structured framework responses and live mock simulations.",
-                pdfUrl: DUMMY_PDF,
-                fullDesc: "Designed to eliminate interview anxiety, this course transforms job candidates into confident interviewees. Through rigorous mock interview drills and real-time evaluator feedback, learners master answering situational, behavioral, and technical interview questions using industry-validated frameworks like STAR and CAR.",
-                outcomes: [
-                    "Structure impactful answers to complex behavioral questions using the STAR technique.",
-                    "Control physiological stress responses and project poise during high-stakes interviews.",
-                    "Negotiate salary expectations and entry-level CTC structures effectively."
-                ],
-                audience: [
-                    "Final year engineering, management, and degree students.",
-                    "Job seekers seeking placement in top MNCs."
-                ],
-                modules: [
-                    {
-                        title: "Module 1: Interview Preparation & Research",
-                        hours: "10 Hours",
-                        topics: ["Job Description Analysis", "Aligning Skills with Roles", "First Impressions & Grooming"],
-                        videos: [
-                            { id: "c3_m1_v1", name: "Lesson 1: Job Description Analysis", duration: "16:40", driveLink: DEFAULT_DRIVE_LINK, pdfLink: DUMMY_PDF }
-                        ]
-                    }
-                ]
-            },
-            {
-                id: 4,
-                title: "Presentation & Pitching Skills",
-                badge: "Executive Growth",
-                duration: "30 Hours (4 Weeks)",
-                modulesCount: "10 Modules",
-                price: "3999",
-                image: "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?auto=format&fit=crop&w=600&q=80",
-                desc: "Design impactful slide decks and deliver compelling business presentations with maximum audience engagement.",
-                pdfUrl: DUMMY_PDF,
-                fullDesc: "Presentation & Pitching Skills trains professionals to capture room attention and deliver memorable visual stories. From slide deck architecture to stage movement and handling tough Q&A sessions, this program covers the end-to-end presentation lifecycle for corporate reviews.",
-                outcomes: [
-                    "Construct visually engaging slide decks that follow modern corporate aesthetic standards.",
-                    "Deliver 15-minute presentations without relying on slide scripts."
-                ],
-                audience: [
-                    "Students presenting project thesis work.",
-                    "Corporate executives leading team presentations."
-                ],
-                modules: [
-                    {
-                        title: "Module 1: Narrative & Slide Architecture",
-                        hours: "8 Hours",
-                        topics: ["Storyboarding Techniques", "Visual Hierarchy in Slides", "Eliminating Text Clutter"],
-                        videos: [
-                            { id: "c4_m1_v1", name: "Lesson 1: Storyboarding & Visual Hierarchy", duration: "18:20", driveLink: DEFAULT_DRIVE_LINK, pdfLink: DUMMY_PDF }
-                        ]
-                    }
-                ]
-            },
-            {
-                id: 5,
-                title: "Group Discussion (GD) Mastery",
-                badge: "Campus Drive",
-                duration: "24 Hours (3 Weeks)",
-                modulesCount: "10 Modules",
-                price: "2199",
-                image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=600&q=80",
-                desc: "Learn leadership tactics, entry strategies, and logical consensus building for campus recruitment GDs.",
-                pdfUrl: DUMMY_PDF,
-                fullDesc: "Group Discussions are critical elimination rounds in campus selection drives. This course teaches participants how to command respect in group dynamics, enter discussions gracefully, present data-backed arguments, and steer chaotic debates toward logical consensus.",
-                outcomes: [
-                    "Initiate and summarize GDs with authority and poise.",
-                    "Formulate logical arguments on unfamiliar abstract topics within 60 seconds."
-                ],
-                audience: ["Students appearing for campus placement drives and MBA entrance rounds."],
-                modules: [
-                    {
-                        title: "Module 1: GD Formats & Entry Tactics",
-                        hours: "6 Hours",
-                        topics: ["Factual vs Abstract Topics", "Case Study Based GDs", "Tactical Interventions"],
-                        videos: [
-                            { id: "c5_m1_v1", name: "Lesson 1: Factual vs Abstract Topics", duration: "12:45", driveLink: DEFAULT_DRIVE_LINK, pdfLink: DUMMY_PDF }
-                        ]
-                    }
-                ]
-            },
-            {
-                id: 6,
-                title: "Resume Building & LinkedIn Branding",
-                badge: "Career Essentials",
-                duration: "20 Hours (2 Weeks)",
-                modulesCount: "10 Modules",
-                price: "1999",
-                image: "https://images.unsplash.com/photo-1586281380349-632531db7ed4?auto=format&fit=crop&w=600&q=80",
-                desc: "Craft ATS-friendly resumes and build an optimized LinkedIn profile that attracts top recruiters.",
-                pdfUrl: DUMMY_PDF,
-                fullDesc: "Ensure your profile stands out among thousands of applicants. This module focuses on formatting ATS (Applicant Tracking System) compliant resumes, writing bullet points with action verbs, and building a LinkedIn profile that triggers inbound recruiter outreach.",
-                outcomes: [
-                    "Build a single-page ATS-optimized resume guaranteed to score high in ATS parsers.",
-                    "Transform LinkedIn into an inbound talent lead-generation engine."
-                ],
-                audience: ["Students, freshers, and experienced professionals upgrading job profiles."],
-                modules: [
-                    {
-                        title: "Module 1: ATS Formatting & Keywords",
-                        hours: "5 Hours",
-                        topics: ["ATS Parsing Mechanics", "Section Layout & Typography", "Keyword Matching"],
-                        videos: [
-                            { id: "c6_m1_v1", name: "Lesson 1: ATS Parsing Mechanics", duration: "11:30", driveLink: DEFAULT_DRIVE_LINK, pdfLink: DUMMY_PDF }
-                        ]
-                    }
-                ]
-            },
-            {
-                id: 7,
-                title: "Quantitative Aptitude & Reasoning",
-                badge: "Quantitative",
-                duration: "50 Hours (8 Weeks)",
-                modulesCount: "10 Modules",
-                price: "4999",
-                image: "https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=600&q=80",
-                desc: "Master speed mathematics, logical reasoning, and data interpretation for corporate selection exams.",
-                pdfUrl: DUMMY_PDF,
-                fullDesc: "Quantitative Aptitude is the foundation for clearing written assessment tests of IT companies, product firms, and banking exams. This comprehensive 50-hour module covers speed math shortcuts, arithmetic problem-solving, logical reasoning puzzles, and data interpretation charts.",
-                outcomes: [
-                    "Solve complex aptitude equations in under 45 seconds using mental math techniques.",
-                    "Clear recruitment screening exams of companies like TCS, Infosys, and Accenture."
-                ],
-                audience: ["All students preparing for campus placement screening tests and competitive exams."],
-                modules: [
-                    {
-                        title: "Module 1: Speed Mathematics Shortcuts",
-                        hours: "12 Hours",
-                        topics: ["Vedic Math Multiplication Shortcuts", "Square & Cube Roots Tricks", "Number Properties"],
-                        videos: [
-                            { id: "c7_m1_v1", name: "Lesson 1: Mental Math & Vedic Multiplication", duration: "25:00", driveLink: DEFAULT_DRIVE_LINK, pdfLink: DUMMY_PDF }
-                        ]
-                    }
-                ]
-            },
-            {
-                id: 8,
-                title: "Corporate Etiquette & Professionalism",
-                badge: "Soft Skills",
-                duration: "20 Hours (3 Weeks)",
-                modulesCount: "10 Modules",
-                price: "2499",
-                image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=600&q=80",
-                desc: "Understand workplace norms, professional attire, virtual meeting etiquette, and office dynamics.",
-                pdfUrl: DUMMY_PDF,
-                fullDesc: "Transitioning smoothly from campus to corporate life requires an understanding of professional decorum. This course covers everything from professional grooming and dining etiquette to virtual meeting etiquette, workspace ethics, and respectful peer interactions.",
-                outcomes: [
-                    "Project a polished, professional image from day one in any corporate setting.",
-                    "Conduct flawless virtual meetings without technical or behavioral errors."
-                ],
-                audience: ["Fresh graduates entering their first corporate job role."],
-                modules: [
-                    {
-                        title: "Module 1: Professional Dress & Grooming",
-                        hours: "5 Hours",
-                        topics: ["Business Formal vs Smart Casuals", "Grooming Standards", "First Impression Metrics"],
-                        videos: [
-                            { id: "c8_m1_v1", name: "Lesson 1: Dress Code Standards", duration: "13:15", driveLink: DEFAULT_DRIVE_LINK, pdfLink: DUMMY_PDF }
-                        ]
-                    }
-                ]
-            },
-            {
-                id: 9,
-                title: "Leadership & Team Collaboration",
-                badge: "Management",
-                duration: "28 Hours (4 Weeks)",
-                modulesCount: "10 Modules",
-                price: "5999",
-                image: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=600&q=80",
-                desc: "Develop managerial mindsets, conflict resolution techniques, and team coordination capabilities.",
-                pdfUrl: DUMMY_PDF,
-                fullDesc: "Great technical skills are amplified by leadership and teamwork capabilities. This course equips learners with practical tools to lead team projects, delegate tasks, motivate peers, and resolve interpersonal friction constructively.",
-                outcomes: [
-                    "Lead project teams effectively while maintaining high morale and accountability.",
-                    "Resolve internal team conflicts using structured mediation strategies."
-                ],
-                audience: ["Aspiring team leads, project student leads, and managers."],
-                modules: [
-                    {
-                        title: "Module 1: Leadership Styles & Delegation",
-                        hours: "7 Hours",
-                        topics: ["Situational Leadership Framework", "Task Assignment Matrix", "Conflict Resolution"],
-                        videos: [
-                            { id: "c9_m1_v1", name: "Lesson 1: Situational Leadership Framework", duration: "21:10", driveLink: DEFAULT_DRIVE_LINK, pdfLink: DUMMY_PDF }
-                        ]
-                    }
-                ]
-            },
-            {
-                id: 10,
-                title: "Time Management & Productivity",
-                badge: "Productivity",
-                duration: "18 Hours (2 Weeks)",
-                modulesCount: "10 Modules",
-                price: "1799",
-                image: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=600&q=80",
-                desc: "Eliminate procrastination and organize work schedules using proven productivity frameworks.",
-                pdfUrl: DUMMY_PDF,
-                fullDesc: "In a fast-paced environment, managing time efficiently is crucial for personal and professional success. This course introduces actionable productivity frameworks like the Eisenhower Matrix, Pomodoro Technique, and GTD system to optimize daily workflow.",
-                outcomes: [
-                    "Save 5–8 hours per week by eliminating non-essential tasks.",
-                    "Design a daily routine that guarantees focus on high-impact projects."
-                ],
-                audience: ["Students managing academic deadlines alongside project work."],
-                modules: [
-                    {
-                        title: "Module 1: Prioritization Frameworks",
-                        hours: "4 Hours",
-                        topics: ["Eisenhower Urgent vs Important Matrix", "ABCDE Task Sorting", "Time Blocking"],
-                        videos: [
-                            { id: "c10_m1_v1", name: "Lesson 1: Eisenhower Matrix Execution", duration: "14:00", driveLink: DEFAULT_DRIVE_LINK, pdfLink: DUMMY_PDF }
-                        ]
-                    }
-                ]
-            },
-            {
-                id: 11,
-                title: "Emotional Intelligence (EQ)",
-                badge: "Soft Skills",
-                duration: "22 Hours (3 Weeks)",
-                modulesCount: "10 Modules",
-                price: "2799",
-                image: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=600&q=80",
-                desc: "Enhance self-awareness, empathy, and emotional resilience to maintain healthy workplace relationships.",
-                pdfUrl: DUMMY_PDF,
-                fullDesc: "Emotional Intelligence is often a key differentiator for leadership success. This course delves into Goleman's EQ framework—Self-Awareness, Self-Regulation, Motivation, Empathy, and Social Skills—helping learners navigate workplace stress effectively.",
-                outcomes: [
-                    "Maintain emotional composure during crisis situations.",
-                    "Build stronger, trust-based connections with colleagues and clients."
-                ],
-                audience: ["Individuals seeking personal growth and leadership preparation."],
-                modules: [
-                    {
-                        title: "Module 1: Self-Awareness & Self-Regulation",
-                        hours: "5 Hours",
-                        topics: ["Emotional Trigger Audits", "Mindfulness Drills", "Resilience Building"],
-                        videos: [
-                            { id: "c11_m1_v1", name: "Lesson 1: Emotional Trigger Audits", duration: "15:45", driveLink: DEFAULT_DRIVE_LINK, pdfLink: DUMMY_PDF }
-                        ]
-                    }
-                ]
-            },
-            {
-                id: 12,
-                title: "Critical Thinking & Problem Solving",
-                badge: "Cognitive",
-                duration: "30 Hours (4 Weeks)",
-                modulesCount: "10 Modules",
-                price: "3299",
-                image: "https://images.unsplash.com/photo-1516321497487-e288fb19713f?auto=format&fit=crop&w=600&q=80",
-                desc: "Learn structured techniques to dissect complex business challenges and derive logical solutions.",
-                pdfUrl: DUMMY_PDF,
-                fullDesc: "Move beyond surface-level fixes to solve underlying problems. This course provides systematic methodologies like the 5 Whys, Fishbone Diagram, Decision Trees, and Six Thinking Hats to evaluate information objectively and make sound decisions.",
-                outcomes: [
-                    "Identify the root causes of operational issues quickly.",
-                    "Evaluate complex business proposals using structured decision matrices."
-                ],
-                audience: ["Students and professionals handling strategic planning or technical troubleshooting."],
-                modules: [
-                    {
-                        title: "Module 1: Root Cause Analysis Tools",
-                        hours: "7 Hours",
-                        topics: ["The 5 Whys Technique", "Ishikawa (Fishbone) Diagram", "Pareto Analysis"],
-                        videos: [
-                            { id: "c12_m1_v1", name: "Lesson 1: The 5 Whys & Fishbone Diagram", duration: "20:15", driveLink: DEFAULT_DRIVE_LINK, pdfLink: DUMMY_PDF }
-                        ]
-                    }
-                ]
-            },
-            {
-                id: 13,
-                title: "Negotiation & Persuasion Tactics",
-                badge: "Professional",
-                duration: "25 Hours (3 Weeks)",
-                modulesCount: "10 Modules",
-                price: "3499",
-                image: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=600&q=80",
-                desc: "Understand Win-Win negotiation strategies for salary discussions, contracts, and business deals.",
-                pdfUrl: DUMMY_PDF,
-                fullDesc: "Negotiation is a core life skill required for securing job offers, closing sales, and managing project scope. This course teaches principled negotiation techniques, helping learners discover value, set BATNA, and persuade ethically without damaging relationships.",
-                outcomes: [
-                    "Confidently negotiate job offers and entry packages.",
-                    "Apply the principles of influence to gain buy-in for ideas."
-                ],
-                audience: ["Job seekers, sales professionals, and project leads."],
-                modules: [
-                    {
-                        title: "Module 1: BATNA & Salary Negotiation",
-                        hours: "6 Hours",
-                        topics: ["Calculating ZOPA & BATNA", "Persuasion Principles", "Evaluating Offer Letters"],
-                        videos: [
-                            { id: "c13_m1_v1", name: "Lesson 1: Calculating ZOPA & BATNA", duration: "16:20", driveLink: DEFAULT_DRIVE_LINK, pdfLink: DUMMY_PDF }
-                        ]
-                    }
-                ]
-            },
-            {
-                id: 14,
-                title: "Business & Workplace English",
-                badge: "Language",
-                duration: "32 Hours (5 Weeks)",
-                modulesCount: "10 Modules",
-                price: "1499",
-                image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=600&q=80",
-                desc: "Improve professional fluency, vocabulary, and sentence construction for international client communication.",
-                pdfUrl: DUMMY_PDF,
-                fullDesc: "Designed for non-native English speakers aiming to operate comfortably in global corporate environments. This module focuses on refining business vocabulary, eliminating mother tongue influence (MTI), and mastering professional tone in phone and video calls.",
-                outcomes: [
-                    "Speak with a clear, neutral accent during international calls.",
-                    "Compose error-free business emails and instant messages."
-                ],
-                audience: ["Students looking to improve workplace English fluency."],
-                modules: [
-                    {
-                        title: "Module 1: Vocabulary & MTI Reduction",
-                        hours: "8 Hours",
-                        topics: ["Corporate Terminology & Jargon", "Neutral Accent Training", "Word Stress"],
-                        videos: [
-                            { id: "c14_m1_v1", name: "Lesson 1: Corporate Terminology & Phrasal Verbs", duration: "17:30", driveLink: DEFAULT_DRIVE_LINK, pdfLink: DUMMY_PDF }
-                        ]
-                    }
-                ]
-            },
-            {
-                id: 15,
-                title: "Advanced Excel & Data Analysis",
-                badge: "Technical Tool",
-                duration: "40 Hours (6 Weeks)",
-                modulesCount: "10 Modules",
-                price: "4499",
-                image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=80",
-                desc: "Master data visualization, formulas, VLOOKUP/XLOOKUP, and Pivot Tables for workplace analytics.",
-                pdfUrl: DUMMY_PDF,
-                fullDesc: "Excel remains an essential analytical tool in corporate environments. This hands-on technical course takes learners from basic spreadsheet operations to advanced data cleaning, complex lookup formulas, dynamic Pivot Dashboards, and basic macro automation.",
-                outcomes: [
-                    "Build automated, interactive dashboards for business reporting.",
-                    "Clean and analyze large datasets efficiently using XLOOKUP and Power Query."
-                ],
-                audience: ["Engineers, business analysts, managers, and administrative staff."],
-                modules: [
-                    {
-                        title: "Module 1: Advanced Lookups & Pivot Tables",
-                        hours: "10 Hours",
-                        topics: ["VLOOKUP vs XLOOKUP Mechanics", "INDEX & MATCH Combinations", "Building Pivot Dashboards"],
-                        videos: [
-                            { id: "c15_m1_v1", name: "Lesson 1: XLOOKUP & INDEX MATCH Functions", duration: "24:15", driveLink: DEFAULT_DRIVE_LINK, pdfLink: DUMMY_PDF }
-                        ]
-                    }
-                ]
+                desc: "Subconscious alignment and mental conditioning for peak performance.",
+                fullDesc: "Tools to reprogram negative thought patterns, build mental focus, and achieve career goals."
             }
         ];
 
-        let selectedCourse = null;
-
         document.addEventListener('DOMContentLoaded', () => {
-            const homeSec = document.getElementById('home-section');
-            const coursesSec = document.getElementById('courses-section');
-            const detailSec = document.getElementById('course-detail-section');
-            const paymentSec = document.getElementById('payment-section');
-
-            const coursesBtn = document.getElementById('courses-btn');
-            const backHomeBtn = document.getElementById('back-home-btn');
-            const backCoursesBtn = document.getElementById('back-courses-btn');
-            const backDetailBtn = document.getElementById('back-detail-btn');
-            const logoBtn = document.getElementById('logo-btn');
-
-            function renderCourses() {
-                const container = document.getElementById('courses-container');
-                container.innerHTML = COURSES_DATA.map(course => `
-                    <div class="course-card">
-                        <div class="course-img-wrapper">
-                            <img src="${course.image}" alt="${course.title}" class="course-card-img-top">
-                            <span class="course-badge">${course.badge}</span>
-                        </div>
-                        <div class="course-card-body">
-                            <div>
-                                <h3 class="course-title">${course.title}</h3>
-                                <div class="course-duration-tag">
-                                    <i class="fa-solid fa-clock"></i> ${course.duration}
-                                </div>
-                                <p class="course-desc">${course.desc}</p>
-                            </div>
-                            <button type="button" class="btn-get-details" onclick="handleViewCourseClick(${course.id})">
-                                View Course <i class="fa-solid fa-chevron-right"></i>
-                            </button>
-                        </div>
-                    </div>
-                `).join('');
-            }
-
-            function showCoursesView() {
-                homeSec.style.display = 'none';
-                detailSec.style.display = 'none';
-                paymentSec.style.display = 'none';
-                coursesSec.style.display = 'block';
-                coursesBtn.classList.add('active');
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-            }
-
-            function showHomeView() {
-                coursesSec.style.display = 'none';
-                detailSec.style.display = 'none';
-                paymentSec.style.display = 'none';
-                homeSec.style.display = 'block';
-                coursesBtn.classList.remove('active');
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-            }
-
-            coursesBtn.addEventListener('click', showCoursesView);
-            backHomeBtn.addEventListener('click', showHomeView);
-            backCoursesBtn.addEventListener('click', showCoursesView);
-            backDetailBtn.addEventListener('click', () => {
-                paymentSec.style.display = 'none';
-                detailSec.style.display = 'block';
-            });
-            logoBtn.addEventListener('click', showHomeView);
-
             renderCourses();
+            document.getElementById('courses-btn').addEventListener('click', showCoursesView);
         });
+
+        function renderCourses() {
+            const container = document.getElementById('courses-container');
+            container.innerHTML = COURSES_DATA.map(course => `
+                <div class="course-card">
+                    <div class="course-img-wrapper">
+                        <img src="${course.image}" class="course-card-img-top">
+                        <span class="course-badge">${course.badge}</span>
+                    </div>
+                    <div class="course-card-body">
+                        <div>
+                            <h3 class="course-title">${course.title}</h3>
+                            <p class="course-desc">${course.desc}</p>
+                        </div>
+                        <button type="button" class="btn-get-details" onclick="handleViewCourseClick(${course.id})">
+                            View Course <i class="fa-solid fa-chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function showCoursesView() {
+            document.getElementById('home-section').style.display = 'none';
+            document.getElementById('course-detail-section').style.display = 'none';
+            document.getElementById('courses-section').style.display = 'block';
+        }
 
         function handleViewCourseClick(courseId) {
             if (!currentUser) {
@@ -1836,15 +473,13 @@
 
         function triggerRegistrationFlow() {
             if (currentUser) {
-                alert(`Registered as ${currentUser.name} (${currentUser.mobile})`);
+                alert(`Registered as ${currentUser.name}`);
             } else {
                 openRegistrationModal();
             }
         }
 
         function openRegistrationModal() {
-            document.getElementById('reg-step-1').style.display = 'block';
-            document.getElementById('reg-step-2').style.display = 'none';
             document.getElementById('registration-modal').style.display = 'flex';
         }
 
@@ -1852,32 +487,43 @@
             document.getElementById('registration-modal').style.display = 'none';
         }
 
-        function handleRegistrationSubmit(event) {
+        // SUBMIT REGISTRATION & SAVE TO GOOGLE SHEET DIRECTLY
+        async function handleRegistrationSubmit(event) {
             event.preventDefault();
-            document.getElementById('reg-step-1').style.display = 'none';
-            document.getElementById('reg-step-2').style.display = 'block';
-        }
 
-        function handleOtpSubmit(event) {
-            event.preventDefault();
-            const otpVal = document.getElementById('otp-input').value;
+            const btn = document.getElementById('btn-register');
+            btn.innerText = "Registering...";
+            btn.disabled = true;
 
-            if (otpVal === "1234" || otpVal.length === 4) {
-                const name = document.getElementById('reg-fullname').value;
-                const country = document.getElementById('reg-country').value;
-                const learnerType = document.getElementById('reg-type').value;
-                const mobile = document.getElementById('reg-mobile').value;
-                const email = document.getElementById('reg-email').value;
-                
-                currentUser = { name, country, learnerType, mobile, email };
+            const fullName = document.getElementById('reg-fullname').value;
+            const country = document.getElementById('reg-country').value;
+            const learnerType = document.getElementById('reg-type').value;
+            const mobile = document.getElementById('reg-mobile').value;
+            const email = document.getElementById('reg-email').value;
 
-                // Save registered info to Google Sheet via Web App URL
-                saveToGoogleSheet(currentUser);
+            // Prepare URL Encoded parameters for Google Script
+            const postParams = new URLSearchParams();
+            postParams.append("fullName", fullName);
+            postParams.append("country", country);
+            postParams.append("learnerType", learnerType);
+            postParams.append("mobile", mobile);
+            postParams.append("email", email);
 
-                // Update Navigation Header
+            try {
+                await fetch(GOOGLE_SHEET_WEB_APP_URL, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                    body: postParams.toString()
+                });
+            } catch (err) {
+                console.error("Submission error:", err);
+            } finally {
+                currentUser = { name: fullName, mobile: mobile };
+
+                // Update Header
                 document.getElementById('registration-action-container').innerHTML = `
                     <div class="user-profile-badge">
-                        <i class="fa-solid fa-circle-check"></i> ${name}
+                        <i class="fa-solid fa-circle-check"></i> ${fullName}
                     </div>
                 `;
 
@@ -1887,137 +533,23 @@
                     openCourseDetail(pendingCourseId);
                     pendingCourseId = null;
                 }
-            } else {
-                alert("Invalid OTP! Please enter 1234.");
-            }
-        }
 
-        function saveToGoogleSheet(userData) {
-            fetch(GOOGLE_SHEET_WEB_APP_URL, {
-                method: 'POST',
-                mode: 'no-cors',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                    timestamp: new Date().toLocaleString(),
-                    fullName: userData.name,
-                    country: userData.country,
-                    learnerType: userData.learnerType,
-                    mobile: userData.mobile,
-                    email: userData.email
-                })
-            }).catch(err => console.error("Error sending to Google Sheets:", err));
+                btn.innerText = "Register & Access Courses";
+                btn.disabled = false;
+            }
         }
 
         function openCourseDetail(courseId) {
-            selectedCourse = COURSES_DATA.find(c => c.id === courseId);
-            if (!selectedCourse) return;
+            const course = COURSES_DATA.find(c => c.id === courseId);
+            if (!course) return;
 
-            document.getElementById('detail-img').src = selectedCourse.image;
-            document.getElementById('detail-title').innerText = selectedCourse.title;
-            document.getElementById('detail-full-desc').innerText = selectedCourse.fullDesc;
-            document.getElementById('detail-price').innerText = `₹${selectedCourse.price}`;
-            document.getElementById('detail-modules').innerText = selectedCourse.modulesCount;
-            document.getElementById('detail-duration').innerText = selectedCourse.duration;
-            document.getElementById('pdf-view-btn').href = selectedCourse.pdfUrl;
-
-            // Render Modules Accordion
-            const accordionContainer = document.getElementById("modules-accordion-container");
-            accordionContainer.innerHTML = "";
-
-            selectedCourse.modules.forEach((mod, idx) => {
-                const accBox = document.createElement("div");
-                accBox.className = "accordion-module";
-                accBox.innerHTML = `
-                    <div class="accordion-header" onclick="toggleAccordion('acc-body-${idx}')">
-                        <span><i class="fa-solid fa-layer-group" style="margin-right: 8px;"></i> ${mod.title}</span>
-                        <div>
-                            <span style="font-size: 0.85rem; color: var(--text-muted); font-weight: 600; margin-right: 10px;">${mod.hours}</span>
-                            <i class="fa-solid fa-chevron-down"></i>
-                        </div>
-                    </div>
-                    <div class="accordion-body" id="acc-body-${idx}">
-                        <ul class="module-topics-list">
-                            ${mod.topics.map(t => `<li><i class="fa-solid fa-circle-check"></i> ${t}</li>`).join('')}
-                        </ul>
-                        <div style="font-weight: 700; font-size: 0.9rem; margin-bottom: 0.5rem; color: var(--text-main);">Video Lessons & Session Materials:</div>
-                        ${mod.videos.map(v => `
-                            <div class="video-item-row">
-                                <div class="video-info">
-                                    <i class="fa-solid fa-circle-play"></i>
-                                    <span>${v.name}</span>
-                                </div>
-                                <div style="display: flex; align-items: center; gap: 10px;">
-                                    <span class="video-duration">${v.duration}</span>
-                                    
-                                    ${v.pdfLink ? `
-                                        <a href="${v.pdfLink}" target="_blank" class="glass-btn" style="padding: 0.35rem 0.75rem; font-size: 0.82rem; text-decoration: none;">
-                                            <i class="fa-solid fa-file-pdf" style="color: var(--accent-gold);"></i> PDF Notes
-                                        </a>
-                                    ` : ''}
-
-                                    <button class="btn-play-video" onclick="playVideo('${v.id}', '${v.name}', '${v.driveLink}')">
-                                        <i class="fa-solid fa-play"></i> Watch
-                                    </button>
-                                </div>
-                            </div>
-                        `).join('')}
-                    </div>
-                `;
-                accordionContainer.appendChild(accBox);
-            });
-
-            document.getElementById("detail-outcomes-list").innerHTML = selectedCourse.outcomes.map(out => `<li><i class="fa-solid fa-circle-check"></i> <span>${out}</span></li>`).join('');
-            document.getElementById("detail-audience-list").innerHTML = selectedCourse.audience.map(aud => `<li><i class="fa-solid fa-user-check"></i> <span>${aud}</span></li>`).join('');
+            document.getElementById('detail-title').innerText = course.title;
+            document.getElementById('detail-full-desc').innerText = course.fullDesc;
 
             document.getElementById('home-section').style.display = 'none';
             document.getElementById('courses-section').style.display = 'none';
-            document.getElementById('payment-section').style.display = 'none';
             document.getElementById('course-detail-section').style.display = 'block';
             window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-
-        function toggleAccordion(bodyId) {
-            const body = document.getElementById(bodyId);
-            body.style.display = (body.style.display === "block") ? "none" : "block";
-        }
-
-        function playVideo(videoId, title, driveLink) {
-            document.getElementById("current-video-title").innerHTML = `<i class="fa-solid fa-play-circle"></i> Playing: ${title}`;
-            const videoModal = document.getElementById("video-player-modal");
-            const iframePlayer = document.getElementById("drive-iframe-player");
-
-            let previewUrl = driveLink.replace(/\/view.*/, "/preview");
-            iframePlayer.src = previewUrl;
-            videoModal.style.display = "block";
-            videoModal.scrollIntoView({ behavior: 'smooth' });
-        }
-
-        function closeVideoPlayer() {
-            document.getElementById("drive-iframe-player").src = "";
-            document.getElementById("video-player-modal").style.display = "none";
-        }
-
-        function selectPaymentMethod(type) {
-            document.querySelectorAll('.payment-card-option').forEach(el => el.classList.remove('selected'));
-            document.querySelectorAll('.payment-form-box').forEach(el => el.style.display = 'none');
-
-            if (type === 'upi') {
-                document.getElementById('pay-upi').checked = true;
-                document.getElementById('pay-upi').closest('.payment-card-option').classList.add('selected');
-                document.getElementById('form-upi').style.display = 'block';
-            } else if (type === 'card') {
-                document.getElementById('pay-card').checked = true;
-                document.getElementById('pay-card').closest('.payment-card-option').classList.add('selected');
-                document.getElementById('form-card').style.display = 'block';
-            } else if (type === 'netbanking') {
-                document.getElementById('pay-nb').checked = true;
-                document.getElementById('pay-nb').closest('.payment-card-option').classList.add('selected');
-                document.getElementById('form-netbanking').style.display = 'block';
-            }
-        }
-
-        function completePayment() {
-            alert('Redirecting to Payment Gateway... Payment Successful! Welcome to Career Graspp.');
         }
     </script>
 </body>
