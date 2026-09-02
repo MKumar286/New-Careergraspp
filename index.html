@@ -789,152 +789,7 @@
             margin-top: 0.4rem;
         }
 
-        /* PAYMENT PAGE STYLES */
-        #payment-section { display: none; }
-        .payment-container {
-            display: grid;
-            grid-template-columns: 1.8fr 1fr;
-            gap: 2.5rem;
-            align-items: start;
-        }
-        .payment-box {
-            background: #ffffff;
-            border: 1px solid var(--border-color);
-            border-radius: 16px;
-            padding: 2rem;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
-        }
-        .payment-section-title {
-            font-size: 1.4rem;
-            font-weight: 700;
-            color: var(--text-main);
-            margin-bottom: 1.5rem;
-            padding-bottom: 0.8rem;
-            border-bottom: 2px solid var(--border-color);
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        .payment-option-group {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            margin-bottom: 2rem;
-        }
-        .payment-card-option {
-            border: 2px solid var(--border-color);
-            border-radius: 12px;
-            padding: 1.2rem;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            background: #fafafa;
-        }
-        .payment-card-option:hover, .payment-card-option.selected {
-            border-color: var(--accent-blue);
-            background: #f0f7ff;
-        }
-        .payment-option-left {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-        .payment-option-left input[type="radio"] {
-            width: 18px;
-            height: 18px;
-            accent-color: var(--accent-blue);
-        }
-        .payment-option-title {
-            font-weight: 700;
-            font-size: 1.05rem;
-            color: var(--text-main);
-        }
-        .brand-logos-wrapper {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        .brand-logo-badge {
-            height: 28px;
-            padding: 2px 8px;
-            border-radius: 6px;
-            background: #ffffff;
-            border: 1px solid #cbd5e1;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 800;
-            font-size: 0.82rem;
-            letter-spacing: -0.3px;
-        }
-        .brand-logo-badge.gpay { color: #4285F4; border-color: #4285F4; }
-        .brand-logo-badge.phonepe { color: #5f259f; border-color: #5f259f; }
-        .brand-logo-badge.paytm { color: #00baf2; border-color: #00baf2; background: #002e6e; color: #fff; }
-        .brand-logo-badge.bhim { color: #00833a; border-color: #00833a; }
-        .brand-logo-badge.visa { color: #1a1f71; font-style: italic; font-weight: 900; }
-        .brand-logo-badge.mastercard { color: #eb001b; font-weight: 900; }
-        .brand-logo-badge.rupay { color: #f37021; font-weight: 800; }
-
-        .payment-form-box {
-            display: none;
-            margin-top: 1rem;
-            padding: 1.2rem;
-            background: #ffffff;
-            border-radius: 10px;
-            border: 1px dashed var(--border-color);
-        }
-
-        .order-summary-box {
-            background: #f8fafc;
-            border: 1px solid var(--border-color);
-            border-radius: 16px;
-            padding: 2rem;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
-        }
-        .summary-row {
-            display: flex;
-            justify-content: space-between;
-            font-size: 0.98rem;
-            color: var(--text-muted);
-            margin-bottom: 0.8rem;
-        }
-        .summary-total {
-            display: flex;
-            justify-content: space-between;
-            font-size: 1.3rem;
-            font-weight: 800;
-            color: var(--text-main);
-            padding-top: 1rem;
-            margin-top: 1rem;
-            border-top: 2px solid var(--border-color);
-        }
-        .btn-pay-now {
-            width: 100%;
-            padding: 1rem;
-            border-radius: 12px;
-            border: none;
-            background: var(--accent-green);
-            color: #ffffff;
-            font-weight: 700;
-            font-size: 1.1rem;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            cursor: pointer;
-            margin-top: 1.5rem;
-            box-shadow: 0 6px 20px rgba(22, 163, 74, 0.25);
-            transition: all 0.3s ease;
-        }
-        .btn-pay-now:hover {
-            background: #15803d;
-            transform: translateY(-2px);
-        }
-
         @media (max-width: 900px) {
-            .payment-container { grid-template-columns: 1fr; }
             .course-detail-container { grid-template-columns: 1fr; }
         }
         @media (max-width: 768px) {
@@ -1142,89 +997,6 @@
                 </div>
             </div>
         </div>
-
-        <!-- PAGE 4: CHECKOUT & PAYMENT PAGE -->
-        <div id="payment-section">
-            <div class="detail-header-nav">
-                <button type="button" class="glass-btn" id="back-detail-btn">
-                    <i class="fa-solid fa-arrow-left"></i> Back to Course Details
-                </button>
-            </div>
-
-            <div class="payment-container">
-                <div class="payment-box">
-                    <h2 class="payment-section-title">
-                        <i class="fa-solid fa-shield-halved" style="color: var(--accent-green);"></i> Select Payment Method
-                    </h2>
-
-                    <div class="payment-option-group">
-                        <div class="payment-card-option selected" onclick="selectPaymentMethod('upi')">
-                            <div class="payment-option-left">
-                                <input type="radio" id="pay-upi" name="payment_method" value="upi" checked>
-                                <label for="pay-upi" class="payment-option-title">UPI Instant Checkout</label>
-                            </div>
-                            <div class="brand-logos-wrapper">
-                                <span class="brand-logo-badge gpay">GPay</span>
-                                <span class="brand-logo-badge phonepe">PhonePe</span>
-                                <span class="brand-logo-badge paytm">Paytm</span>
-                                <span class="brand-logo-badge bhim">BHIM</span>
-                            </div>
-                        </div>
-
-                        <div class="payment-form-box" id="form-upi" style="display: block;">
-                            <div class="form-group">
-                                <label>Enter Virtual Payment Address (VPA / UPI ID)</label>
-                                <input type="text" class="form-control" placeholder="username@okhdfcbank / mobile@ybl">
-                            </div>
-                        </div>
-
-                        <div class="payment-card-option" onclick="selectPaymentMethod('card')">
-                            <div class="payment-option-left">
-                                <input type="radio" id="pay-card" name="payment_method" value="card">
-                                <label for="pay-card" class="payment-option-title">Credit / Debit Cards</label>
-                            </div>
-                            <div class="brand-logos-wrapper">
-                                <span class="brand-logo-badge visa">VISA</span>
-                                <span class="brand-logo-badge mastercard">MC</span>
-                                <span class="brand-logo-badge rupay">RuPay</span>
-                            </div>
-                        </div>
-
-                        <div class="payment-card-option" onclick="selectPaymentMethod('netbanking')">
-                            <div class="payment-option-left">
-                                <input type="radio" id="pay-nb" name="payment_method" value="netbanking">
-                                <label for="pay-nb" class="payment-option-title">Net Banking</label>
-                            </div>
-                            <i class="fa-solid fa-building-columns" style="font-size: 1.2rem; color: var(--text-muted);"></i>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="order-summary-box">
-                    <h3 class="widget-title" style="margin-bottom: 1.2rem;">Order Summary</h3>
-                    
-                    <p style="font-weight: 700; color: var(--text-main); margin-bottom: 1rem;" id="checkout-course-title"></p>
-
-                    <div class="summary-row">
-                        <span>Course Price</span>
-                        <span id="checkout-subtotal"></span>
-                    </div>
-                    <div class="summary-row">
-                        <span>GST / Taxes (18%)</span>
-                        <span id="checkout-tax"></span>
-                    </div>
-
-                    <div class="summary-total">
-                        <span>Total Amount</span>
-                        <span id="checkout-total" style="color: var(--accent-blue);"></span>
-                    </div>
-
-                    <button type="button" class="btn-pay-now" onclick="completePayment()">
-                        <i class="fa-solid fa-lock"></i> Complete Payment
-                    </button>
-                </div>
-            </div>
-        </div>
     </main>
 
     <!-- RESPONSIVE REGISTRATION POPUP MODAL (NO OTP) -->
@@ -1277,7 +1049,7 @@
 
     <!-- JavaScript Data & Logic -->
     <script>
-        const GOOGLE_SHEET_WEB_APP_URL = "https://script.google.com/macros/s/AKfycbzWe41C1E-8lLu_EaQ63GwT2CsT-Q1JiLMo_BgGDHU_Z2dpk6shtAjHb827K_d6ZzD9/exec";
+        const GOOGLE_SHEET_WEB_APP_URL = "https://script.google.com/macros/s/AKfycby09o3IHOroQjS0s7yYspHQulBp4PD-UBs8mA8j0HRF1yIroW5p9-d8clJPlkW5rtlW/exec";
 
         const DEFAULT_DRIVE_LINK = "https://drive.google.com/file/d/1YTyxw_fOEJ0O_fBpG8_7Kcxr1ioaVEV2/view?usp=sharing";
         const DUMMY_PDF = "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf";
@@ -1725,13 +1497,25 @@
             const homeSec = document.getElementById('home-section');
             const coursesSec = document.getElementById('courses-section');
             const detailSec = document.getElementById('course-detail-section');
-            const paymentSec = document.getElementById('payment-section');
 
             const coursesBtn = document.getElementById('courses-btn');
             const backHomeBtn = document.getElementById('back-home-btn');
             const backCoursesBtn = document.getElementById('back-courses-btn');
-            const backDetailBtn = document.getElementById('back-detail-btn');
             const logoBtn = document.getElementById('logo-btn');
+
+            // --- BUY NOW GOOGLE FORM INTEGRATION ---
+            const GOOGLE_FORM_URL = "https://docs.google.com/forms/d/e/YOUR_ACTUAL_FORM_ID/viewform";
+
+            document.getElementById('buy-now-btn').addEventListener('click', () => {
+                if (!currentUser) {
+                    alert("Please register first to proceed with enrollment.");
+                    openRegistrationModal();
+                    return;
+                }
+                
+                window.open(GOOGLE_FORM_URL, '_blank');
+            });
+            // ----------------------------------------
 
             function renderCourses() {
                 const container = document.getElementById('courses-container');
@@ -1760,7 +1544,6 @@
             function showCoursesView() {
                 homeSec.style.display = 'none';
                 detailSec.style.display = 'none';
-                paymentSec.style.display = 'none';
                 coursesSec.style.display = 'block';
                 coursesBtn.classList.add('active');
                 window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -1769,7 +1552,6 @@
             function showHomeView() {
                 coursesSec.style.display = 'none';
                 detailSec.style.display = 'none';
-                paymentSec.style.display = 'none';
                 homeSec.style.display = 'block';
                 coursesBtn.classList.remove('active');
                 window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -1778,10 +1560,6 @@
             coursesBtn.addEventListener('click', showCoursesView);
             backHomeBtn.addEventListener('click', showHomeView);
             backCoursesBtn.addEventListener('click', showCoursesView);
-            backDetailBtn.addEventListener('click', () => {
-                paymentSec.style.display = 'none';
-                detailSec.style.display = 'block';
-            });
             logoBtn.addEventListener('click', showHomeView);
 
             renderCourses();
@@ -1926,7 +1704,6 @@
 
             document.getElementById('home-section').style.display = 'none';
             document.getElementById('courses-section').style.display = 'none';
-            document.getElementById('payment-section').style.display = 'none';
             document.getElementById('course-detail-section').style.display = 'block';
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
@@ -1950,29 +1727,6 @@
         function closeVideoPlayer() {
             document.getElementById("drive-iframe-player").src = "";
             document.getElementById("video-player-modal").style.display = "none";
-        }
-
-        function selectPaymentMethod(type) {
-            document.querySelectorAll('.payment-card-option').forEach(el => el.classList.remove('selected'));
-            document.querySelectorAll('.payment-form-box').forEach(el => el.style.display = 'none');
-
-            if (type === 'upi') {
-                document.getElementById('pay-upi').checked = true;
-                document.getElementById('pay-upi').closest('.payment-card-option').classList.add('selected');
-                document.getElementById('form-upi').style.display = 'block';
-            } else if (type === 'card') {
-                document.getElementById('pay-card').checked = true;
-                document.getElementById('pay-card').closest('.payment-card-option').classList.add('selected');
-                document.getElementById('form-card').style.display = 'block';
-            } else if (type === 'netbanking') {
-                document.getElementById('pay-nb').checked = true;
-                document.getElementById('pay-nb').closest('.payment-card-option').classList.add('selected');
-                document.getElementById('form-netbanking').style.display = 'block';
-            }
-        }
-
-        function completePayment() {
-            alert('Redirecting to Payment Gateway... Payment Successful! Welcome to Career Graspp.');
         }
     </script>
 </body>
